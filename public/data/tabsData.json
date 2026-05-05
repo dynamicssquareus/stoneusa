@@ -1,0 +1,76 @@
+{
+  "tabs": [
+    {
+      "id": "uk",
+      "label": "UK/Ireland",
+      "cards": [
+        {
+          "title": "Angel Headstone",
+          "img": "/img/webpages/Angel-headstone.png",
+          "href": "/tombstones-monuments/angel/"
+        },
+        {
+          "title": "Plaques",
+          "img": "/img/webpages/Plaque.png",
+          "href": "/tombstones-monuments/plaques/"
+        },
+        {
+          "title": "Kerb Sets/ Kerb Surround",
+          "img": "/img/webpages/Kerb-set.png",
+          "href": "/tombstones-monuments/kerb-sets/"
+        },
+        {
+          "title": "Headstone",
+          "img": "/img/webpages/headstone.png",
+          "href": "/tombstones-monuments/headstones/"
+        },
+        {
+          "title": "Book Shaped Headstone",
+          "img": "/img/webpages/Bookshape-headstone.png",
+          "href": "/tombstones-monuments/book/"
+        },
+        {
+          "title": "Heart Shaped Headstone",
+          "img": "/img/webpages/Heartshape-headstone.png",
+          "href": "/tombstones-monuments/headstones/"
+        }
+      ]
+    },
+    {
+      "id": "us",
+      "label": "USA/Canada",
+      "cards": [
+        {
+          "title": "Upright Headstone",
+          "img": "/img/webpages/usa-01.png",
+          "href": "/tombstones-monuments/upright/"
+        },
+        {
+          "title": "Slant Headstone",
+          "img": "/img/webpages/usa-02.png",
+          "href": "/tombstones-monuments/slant/"
+        },
+        {
+          "title": "Flat Grave Marker",
+          "img": "/img/webpages/usa-03.png",
+          "href": "/tombstones-monuments/flat/"
+        },
+        {
+          "title": "Memorial Bench",
+          "img": "/img/webpages/usa-04.png",
+          "href": "/tombstones-monuments/bench/"
+        },
+        {
+          "title": "Vases",
+          "img": "/img/webpages/usa-05.png",
+          "href": "/tombstones-monuments/vases/"
+        },
+        {
+          "title": "Bevel",
+          "img": "/img/webpages/usa-06.png",
+          "href": "/tombstones-monuments/bevel-markers/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import Head from 'next/head';
+import Image from 'next/image';
+import ImageMagnifier from '@/components/ImageMagnifier';
+import { Accordion, AccordionBody, AccordionHeader, AccordionItem, } from 'reactstrap';
+
+import ModelBox from '@/components/ModelBox';
+import FooterContactFormHome from '@/components/FooterContactFormHome';
+import ProductGallery from '@/components/ProductGallery';
+
+
+const getImageUrl = (img) =>
+  img ? `${process.env.NEXT_PUBLIC_IMAGE}/${img}` : '/img/webpages/product-01.jpg';
+
+const ProductPage = ({ product, relatedProducts, specifications, error }) => {
+  if (error) {
+    return <div className="container py-5 text-center">Error loading product. Please try again later.</div>;
+  }
+
+  const sliderRef = useRef(null);  // Reference to the Swiper 
+  const [open, setOpen] = useState('1');
+  const [openone, setOpenone] = useState('01');
+  const toggle = (id) => {
+    if (open === id) {
+      setOpen();
+    } else {
+      setOpen(id);
+    }
+  };
+
+  const toggles = (id) => {
+    if (openone === id) {
+      setOpenone();
+    } else {
+      setOpenone(id);
+    }
+  };
+  // --- helpers (place above return) ---
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || '').replace(/\/$/, '') + '/';
+  const pagePath = `product/${product.slug}/`;
+
+  const canonicalUrl = `${siteUrl}${pagePath}`;
+
+  const metaTitle =
+    product?.metaTitle ||
+    product?.title ||
+    'UK’s Trusted Supplier of Memorial Stones | Stone Discover UK';
+
+  const metaDescription =
+    product?.metaDescription ||
+    product?.excerpt ||
+    product?.shortdescription ||
+    'Stone Discover UK supplies high-quality memorial stones at wholesale prices.';
+
+  // image selection
+  const metaImage =
+    (product?.featuredimage && getImageUrl(product.featuredimage)) ||
+    (product?.image && getImageUrl(product.image)) ||
+    'https://www.stonediscover.com/img/stone-og-inne.jpeg';
+
+  // *** BEST PRACTICE: Always provide fallback dimensions ***
+  const metaImageWidth = '1200';
+  const metaImageHeight = '630';
+
+  // get mime type correctly
+  const getImageMimeType = (img = '') => {
+    const clean = img.split('?')[0].split('#')[0];
+    const ext = clean.split('.').pop().toLowerCase();
+    if (['png', 'jpg', 'jpeg', 'webp', 'gif'].includes(ext)) {
+      return `image/${ext === 'jpg' ? 'jpeg' : ext}`;
+    }
+    return 'image/jpeg';
+  };
+
+  const metaImageType = getImageMimeType(metaImage);
+
+  /* ✅ SCHEMA VALIDATOR */
+  const getSafeSchema = (schemaString) => {
+    if (!schemaString || typeof schemaString !== 'string') return null;
+
+    try {
+      const parsed = JSON.parse(schemaString);
+      const forbidden = ['srcset', 'imagesrcset', '_next', '<link', '<script'];
+      const text = JSON.stringify(parsed).toLowerCase();
+      if (forbidden.some((f) => text.includes(f))) return null;
+
+      if (parsed.image && typeof parsed.image !== 'string') {
+        parsed.image = getImageUrl(product.images?.[0]);
+      }
+
+      return JSON.stringify(parsed);
+    } catch {
+      return null;
+    }
+  };
+
+
+  // FAQs: prefer subcategory -> category -> passed faq prop -> []
+  const displayFaqs =
+    (Array.isArray(product?.faqs) && product.faqs.length > 0
+      ? product.faqs
+      : Array.isArray(product?.faqs) && product.faqs.length > 0
+        ? product.faqs
+        : Array.isArray(faq) && faq.length > 0
+          ? faq
+          : []);
+
+  // --- JSX head block ---
+  return (
+    <>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Keywords */}
+        {product?.metaKeywords && <meta name="keywords" content={product.metaKeywords} />}
+
+        {/* OG */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={metaImage} />
+        <meta property="og:image:width" content={metaImageWidth} />
+        <meta property="og:image:height" content={metaImageHeight} />
+        <meta property="og:image:type" content={metaImageType} />
+        <meta property="og:site_name" content="Stone Discover" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@StoneDiscover" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={metaImage} />
+
+        {/* Schema */}
+        {/* {product.schema &&
+          product.schema.map((scriptContent, index) => (
+            <script
+              key={index}
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: scriptContent }}
+            />
+          ))} */}
+
+        {/* ✅ SAFE SCHEMA */}
+        {product?.schema &&
+          product.schema.map((schemaItem, index) => {
+            const safeSchema = getSafeSchema(schemaItem);
+            if (!safeSchema) return null;
+
+            return (
+              <script
+                key={index}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: safeSchema }}
+              />
+            );
+          })}
+      </Head>
+      <div className='container m-t-40'>
+        <div className='row'>
+          <div className='col-lg-12'>
+            <nav aria-label="breadcrumb">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
+                  {product?.subcategory ? (
+                    <a href={`/${product.category.slug}/${product.subcategory.slug}/`}>{product.subcategory.title}</a>
+                  ) : (
+                    <span>Uncategorized</span>
+                  )}
+                </li>
+                <li className="breadcrumb-item active" aria-current="page">{product.Title || product.title}</li>
+              </ol>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+
+      <div className='product-page-wrap p-t-40'>
+        <div className='container'>
+          <div className='row'>
+
+
+
+            <div className='col-lg-5'>
+              <ProductGallery
+                images={product.images?.map(img => getImageUrl(img))}
+                title={product.title}
+              />
+              {/* <div className='product-pic' ref={sliderRef}>
+                <ImageMagnifier src={getImageUrl(product.images?.[0])} alt={product.title}
+                  zoomScale={2} sliderRef={sliderRef} />
+
+              </div> */}
+              {/* <div className='product-pic' style={{position:'sticky',top:'100px'}}>
+                 <Image src={getImageUrl(product.images?.[0])} alt={product.title}
+                 width={600} height={600} priority
+                  />
+              </div> */}
+            </div>
+            <div className='col-lg-7'>
+              <div className='single-product-details'>
+                <div className='product-title m-b-30'>
+                  <h1 className='m-b-15'>{product.title}</h1>
+
+                  <div dangerouslySetInnerHTML={{ __html: product.metaDescription }}></div>
+                </div>
+                {/* <div className='product-size-info '>
+                  <ul>
+                    <li>
+                      <span className='p-name'>Color</span>
+                      <span className='p-n-s'>:</span>
+                      <span className='p-info'>High Quality Black Granite</span>
+                    </li>
+                    <li>
+                      <span className='p-name'>Origin</span>
+                      <span className='p-n-s'>:</span>
+                      <span className='p-info'>India</span>
+                    </li>
+                    <li>
+                      <span className='p-name'>Size</span>
+                      <span className='p-n-s'>:</span>
+                      <span className='p-info'>Size: Top 24″x6″x28″ Base 28″x10″x6″</span>
+                    </li>
+                    <li>
+                      <span className='p-name'>Finish	</span>
+                      <span className='p-n-s'>:</span>
+                      <span className='p-info'>Polished Fully Carved</span>
+                    </li>
+                    <li>
+                      <span className='p-name'>Price</span>
+                      <span className='p-n-s'>:</span>
+                      <span className='p-info'>Get a Quote</span>
+                    </li>
+                  </ul>
+                </div> */}
+                <div className='product-size-info'>
+                  {product.specifications?.length > 0 ? (
+                    <ul>
+                      {product.specifications.map((item) => (
+                        <li key={item._id}>
+                          <span className='p-name'>{item.label}</span>
+                          <span className='p-n-s'>:</span>
+                          <span className='p-info'>{item.value}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>No specifications available.</p>
+                  )}
+                </div>
+                <div className="m-t-40 m-b-30"> <ModelBox className='btn-three' headerText="Scale Your Store! " buttonText="Request a Quote " />
+                </div>
+
+                <div className='product-dis'>
+                  <div className='form-left'>
+                    <div className='accordion-one'>
+                      <Accordion open={openone} toggle={toggles}>
+                        <AccordionItem>
+                          <AccordionHeader targetId="01">
+                            <div className="d-flex justify-content-between align-items-center w-100">
+                              <h3>Description</h3>
+                            </div>
+                          </AccordionHeader>
+                          <AccordionBody accordionId="01">
+                            <div className='prodct-detils-body'>
+                              <div dangerouslySetInnerHTML={{ __html: product.description }}></div>
+                            </div>
+                          </AccordionBody>
+                        </AccordionItem>
+
+                      </Accordion>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <section className='p-t-100 p-t-40'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-lg-9'>
+              <div className='heading-center p-b-40'>
+                <h2 className='m-b-30'>Related Products</h2>
+              </div>
+            </div>
+          </div>
+          <div className='row g-4 sliding-row'>
+
+
+            {relatedProducts?.length > 0 ? (
+              relatedProducts.slice(0, 4).map((rel) => (
+                <div className="col-lg-3 col-md-4 sliding-col" key={rel._id}>
+
+                  <div className='card-04'>
+                    <div className='card-04-item text-center'>
+                      <a href={`/product/${rel.slug}`}>
+                        <Image
+                          src={getImageUrl(rel.images?.[0])}
+                          alt={rel.title}
+                          width={300}
+                          height={250}
+                          className="img-fluid"
+                        />
+                        <h4>{rel.title}</h4>
+                      </a>
+                    </div>
+                  </div>
+
+
+                </div>
+              ))
+            ) : (
+              <p>No related products found.</p>
+            )}
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <section className='p-b-60 p-t-30 m-p-07'>
+        <div className='container  p-t-80'>
+          <div className='row justify-content-center'>
+            <div className='col-lg-9'>
+              <div className='heading-center p-b-40'>
+                <h2 className='m-b-30'>Pillars of Strength</h2>
+                <p>Whether you’re a high-volume buyer or expanding your product line, our team is here to support your growth. We understand the B2B dynamics of the memorial industry and deliver not just products—but trust, consistency, and partnership.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-lg-12'>
+              <div className='card-05'>
+                <div className='card-05-item'>
+                  <Image src='/img/icons/about-pi-01.png' alt='About Us' className='img-fluid' width={48} height={48} />
+                  <span>Finest Quality Stones</span>
+                  <p>We ensure that each headstone is crafted with great attention to detail</p>
+                </div>
+                <div className='card-05-item'>
+                  <Image src='/img/icons/about-pi-02.png' alt='About Us' className='img-fluid' width={48} height={48} />
+                  <span>Competitive Prices</span>
+                  <p>Get Quality headstones at the Best Rates!</p>
+                </div>
+                <div className='card-05-item'>
+                  <Image src='/img/icons/about-pi-03.png' alt='About Us' className='img-fluid' width={48} height={48} />
+                  <span>On-time Delivery</span>
+                  <p>Ensuring Your tombstones Arrive When You Need Them!</p>
+                </div>
+                <div className='card-05-item'>
+                  <Image src='/img/icons/about-pi-04.png' alt='About Us' className='img-fluid' width={48} height={48} />
+                  <span>Bulk Order</span>
+                  <p>Streamline Your Business with Our Premium tombstones!</p>
+                </div>
+                <div className='card-05-item'>
+                  <Image src='/img/icons/about-pi-05.png' alt='About Us' className='img-fluid' width={48} height={48} />
+                  <span>Shipping Worldwide</span>
+                  <p>Delivering Quality tombstones Everywhere!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='partner-section'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-12'>
+              <div className='heading-left p-b-20'>
+                <h2 className='m-b-30'>Why Partner With Stone Discover?</h2>
+              </div>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col-lg-6 align-self-center'>
+              <div className='partner-pic'>
+                <img src='/img/webpages/headstones-pic.png' alt='partent-side-pic' />
+              </div>
+            </div>
+            <div className='col-lg-6 align-self-center'>
+              <div className='form-left'>
+                <div className='accordion-one accordion-one-product'>
+                  <Accordion open={open} toggle={toggle}>
+                    <AccordionItem>
+                      <AccordionHeader targetId="1">
+                        <div className="d-flex justify-content-between align-items-center w-100">
+                          <h3><img src='/img/icons/faq-icon-01.png' alt='faq-icon' />Direct Manufacturer Advantage</h3>
+                        </div>
+                      </AccordionHeader>
+                      <AccordionBody accordionId="1">
+                        <p>No middlemen. No markups. Just direct supply from our own facilities in India.</p>
+                        <p>We own and operate our full production chain — from granite sourcing at Khammam quarry in Telangana to manufacturing at our Chennai factory. This means:</p>
+                        <ul>
+                          <li>Competitive wholesale & B2B export pricing on every order</li>
+                          <li>Consistent supply with no third-party dependency</li>
+                          <li>Flexible production for both standard and custom designs</li>
+                          <li>Export-ready packaging for seamless US import</li>
+                        </ul>
+                        <p>Since 1984, we have been exporting premium granite memorials to dealers, cemeteries, and monument retailers across the USA and 70+ countries worldwide.</p>
+                      </AccordionBody>
+                    </AccordionItem>
+                    <AccordionItem>
+                      <AccordionHeader targetId="2">
+                        <div className="d-flex justify-content-between align-items-center w-100">
+                          <h3><img src='/img/icons/faq-icon-02.png' alt='faq-icon' />Consistent Quality, Every Time</h3>
+                        </div>
+                      </AccordionHeader>
+                      <AccordionBody accordionId="2">
+                        <p>Every piece that ships from our facility is built to last — outdoors, for decades.</p>
+                        <p>Our memorials are crafted from premium Indian granite, quarry-sourced directly from Telangana and processed at our Chennai plant. Each product goes through a strict multi-stage quality check covering:</p>
+                        <ul>
+                          <li>Surface finishing and polish consistency</li>
+                          <li>Dimensional accuracy to US cemetery specifications</li>
+                          <li>Structural integrity for all-weather outdoor durability</li>
+                          <li>Engraving-ready panel preparation</li>
+                        </ul>
+                        <p>When your customers receive a Stone Discover product, it reflects the standard your business stands for.</p>
+                      </AccordionBody>
+                    </AccordionItem>
+                    <AccordionItem>
+                      <AccordionHeader targetId="3">
+                        <div className="d-flex justify-content-between align-items-center w-100">
+                          <h3><img src='/img/icons/faq-icon-03.png' alt='faq-icon' />Custom Designs</h3>
+                        </div>
+                      </AccordionHeader>
+                      <AccordionBody accordionId="3">
+                        <p>Your customers have unique needs. We make sure you can meet every one of them.</p>
+                        <p>We support full customisation across our entire product range, including:</p>
+                        <ul>
+                          <li>Upright Headstones</li>
+                          <li>Flat Markers</li>
+                          <li>Slant Markers</li>
+                          <li>Bevel Markers</li>
+                          <li>Angel Headstones</li>
+                          <li>Memorial Benches</li>
+                          <li>Full Length Kerb Sets</li>
+                          <li>Ledger Grave Markers</li>
+                          <li>Columbarium</li>
+                        </ul>
+                        <p>All designs are engraving-ready, and we accept custom shapes, sizes, granite colours, and sculpted details, whether it's a single bespoke piece or a large bulk order.</p>
+                      </AccordionBody>
+                    </AccordionItem>
+                    <AccordionItem>
+                      <AccordionHeader targetId="4">
+                        <div className="d-flex justify-content-between align-items-center w-100">
+                          <h3><img src='/img/icons/faq-icon-04.png' alt='faq-icon' />Seamless Export & Delivery to the USA</h3>
+                        </div>
+                      </AccordionHeader>
+                      <AccordionBody accordionId="4">
+                        <p>From our production floor in Chennai to your warehouse — reliable, trackable, and hassle-free.</p>
+                        <p>Stone Discover exports granite memorials directly to the USA with full logistics support:</p>
+                        <ul>
+                          <li>Export-ready crating and packaging</li>
+                          <li>Proper freight coordination (sea & air)</li>
+                          <li>Hassle-free customs documentation handling</li>
+                          <li>Bulk order dispatch with flexible lead times</li>
+                          <li>Dedicated export support team for US buyers</li>
+                          <p>Whether you are a monument dealer, cemetery supplier, or wholesale distributor — our export network is built to keep your business moving.
+                          </p>
+                        </ul>
+                      </AccordionBody>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='p-b-100 p-t-80 m-p-07'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-lg-9'>
+              <div className='heading-center p-b-40'>
+                <h2 className='m-b-30'>Popular Granite <span>Varieties</span> We Offer</h2>
+              </div>
+            </div>
+          </div>
+          <div className='row g-2 sliding-row'>
+            <div className='col-lg-2 col-md-4 sliding-col'>
+              <div className='card-04'>
+                <div className='card-04-item text-center'>
+                  <a href="/contact-us/">
+                    <Image src='/img/webpages/pic-13.jpg' alt='Absolute Black' width={210} height={210} className='img-fluid' />
+                    <h4>Absolute Black</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-2 col-md-4 sliding-col'>
+              <div className='card-04'>
+                <div className='card-04-item text-center'>
+                  <a href="/contact-us/">
+                    <Image src='/img/webpages/pic-14.jpg' alt='Bahama Blue' width={210} height={210} className='img-fluid' />
+                    <h4>Bahama Blue</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-2 col-md-4 sliding-col'>
+              <div className='card-04'>
+                <div className='card-04-item text-center'>
+                  <a href="/contact-us/">
+                    <Image src='/img/webpages/pic-15.jpg' alt='Indian Aurora' width={210} height={210} className='img-fluid' />
+                    <h4>Indian Aurora</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-2 col-md-4 sliding-col'>
+              <div className='card-04'>
+                <div className='card-04-item text-center'>
+                  <a href="/contact-us/">
+                    <Image src='/img/webpages/pic-16.jpg' alt='Imperial Red' width={210} height={210} className='img-fluid' />
+                    <h4>Imperial Red</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-2 col-md-4 sliding-col'>
+              <div className='card-04'>
+                <div className='card-04-item text-center'>
+                  <a href="/contact-us/">
+                    <Image src='/img/webpages/pic-17.jpg' alt='Jurpana' width={210} height={210} className='img-fluid' />
+                    <h4>Jurpana</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-2  col-md-4 sliding-col'>
+              <div className='card-04'>
+                <div className='card-04-item text-center'>
+                  <a href="/contact-us/">
+                    <Image src='/img/webpages/pic-18.jpg' alt='Kuppam Green' width={210} height={210} className='img-fluid' />
+                    <h4>Kuppam Green</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='p-t-20'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-lg-9'>
+              <div className='heading-center p-b-40'>
+                <h2 className='m-b-30'>Partner with a Trusted <span>Granite Monuments Exporter</span></h2>
+                <p>Whether you are sourcing in bulk or expanding your memorial range, Stone Discover supports your business with reliable granite headstones supply, consistent quality, and export expertise. We work closely with memorial dealers and retailers worldwide to ensure long-term supply partnerships built on trust and performance.</p>
+              </div>
+              <div className='button-center-new text-center'>
+                <ModelBox className='btn-three' headerText="Scale Your Store! " buttonText="Request a Quote" />
+                <a className='btn-four btn-four-cc' href="/catalog-download">Request Catalogue</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FooterContactFormHome faqList={displayFaqs} />
+
+
+
+      {/* <div className="container py-5">
+        <h1>{product.title}</h1>
+        <div className="mb-4">
+          <Image
+            src={getImageUrl(product.images?.[0])}
+            alt={product.title}
+            width={500}
+            height={400}
+            className="img-fluid"
+          />
+        </div>
+
+        <h2>Related Products</h2>
+        <div className="row">
+          {relatedProducts?.length > 0 ? (
+            relatedProducts.map((rel) => (
+              <div className="col-md-3" key={rel._id}>
+                <a href={`/tombstones-monuments/${rel.categorySlug}/${rel.slug}`}>
+                  <Image
+                    src={getImageUrl(rel.images?.[0])}
+                    alt={rel.title}
+                    width={300}
+                    height={250}
+                    className="img-fluid"
+                  />
+                  <p>{rel.title}</p>
+                </a>
+              </div>
+            ))
+          ) : (
+            <p>No related products found.</p>
+          )}
+        </div>
+      </div> */}
+
+
+
+
+    </>
+  );
+};
+
+export default ProductPage;
+
+export async function getStaticPaths() {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_PRODUCTS_API_URL}`);
+    const data = await res.json();
+
+    const paths = data?.map((product) => ({
+      params: {
+        AllCategory_slug: product.categorySlug || 'unknown-category',
+        categorslug: product.categorySlug || 'unknown-category',
+        product_slug: product.slug,
+      },
+    })) || [];
+
+    return { paths, fallback: 'blocking' };
+  } catch (error) {
+    console.error('Error in getStaticPaths:', error);
+    return { paths: [], fallback: 'blocking' };
+  }
+}
+
+export async function getStaticProps(context) {
+  const { product_slug } = context.params;
+
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_PRODUCTS_DETAILS_API_URL}/${product_slug}`);
+    if (!res.ok) throw new Error('Failed to fetch product details');
+
+    const { product, relatedProducts } = await res.json();
+
+    return {
+      props: {
+        product,
+        relatedProducts: relatedProducts || [],
+        faq:
+          product.faqs && product.faqs.length > 1
+            ? product.faqs
+            : product.category?.faqs && product.category.faqs.length > 1
+              ? product.category.faqs
+              : null,
+      },
+      revalidate: 60, // ISR
+    };
+  } catch (err) {
+    console.error('Error in getStaticProps:', err);
+    return {
+      props: {
+        error: true,
+      },
+    };
+  }
+}
