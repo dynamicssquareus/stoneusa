@@ -160,11 +160,6 @@
       "statusCode": 301
     },
     {
-      "source": "/headstones/",
-      "destination": "/tombstones-monuments/headstones/",
-      "statusCode": 301
-    },
-    {
       "source": "/headstone-vases/",
       "destination": "/tombstones-monuments/vases/",
       "statusCode": 301
@@ -666,7 +661,7 @@
   { "source": "/news/pola-baru-rilis-ini-wajib-dicoba.html", "destination": "/", "statusCode": 301 },
   {
       "source": "/tombstones-monuments/headstones/",
-      "destination": "/headstones/",
+      "destination": "/headstones/upright/",
       "statusCode": 301
     },
 {
