@@ -170,10 +170,8 @@ const Index = ({ categories = [], categoryData = {} }) => {
                 <title>{metaTitle}</title>
                 <meta name="description" content={metaDescription} />
                 <link rel="canonical" href={canonicalUrl} />
-
                 {/* standard meta */}
                 {categoryData?.metaKeywords && <meta name="keywords" content={categoryData.metaKeywords} />}
-
                 {/* Open Graph */}
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="website" />
