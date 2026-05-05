@@ -13,8 +13,18 @@ module.exports = {
     '/blog/tag*',
     '/blog/category*',
     '/blog/author*',
-    '/thank-you'
+    '/thank-you',
+    '/natural-stones',
+    '/natural-stones*',
+    '/blog/stonemason',
+    '/blog/limestone-vs-sandstone-which-is-the-better-choice',
+    '/blog/popular-granite-colors',
+    '/blog/difference-between-limestone-and-marble',
+    '/blog/which-natural-stone-is-most-durable',
+    '/blog/white-granite-colors',
+    '/blog/general-contractor-vs-construction-company'
   ],
+
 
   additionalPaths: async (config) => {
     const res = await fetch(

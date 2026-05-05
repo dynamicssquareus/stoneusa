@@ -166,7 +166,9 @@ const Index = ({ categories = [], categoryData = {} }) => {
 
     return (
         <>
+
             <Head>
+                <meta name="robots" content="noindex, nofollow" />
                 <title>{metaTitle}</title>
                 <meta name="description" content={metaDescription} />
                 <link rel="canonical" href={canonicalUrl} />
