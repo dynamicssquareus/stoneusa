@@ -663,6 +663,56 @@
   { "source": "/shop/page/20/", "destination": "/", "statusCode": 301 },
 
   { "source": "/news/jam-jam-ini-mahjong-ways-2-meledak-banget.html", "destination": "/", "statusCode": 301 },
-  { "source": "/news/pola-baru-rilis-ini-wajib-dicoba.html", "destination": "/", "statusCode": 301 }
+  { "source": "/news/pola-baru-rilis-ini-wajib-dicoba.html", "destination": "/", "statusCode": 301 },
+  {
+      "source": "/tombstones-monuments/headstones/",
+      "destination": "/headstones/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/upright/",
+      "destination": "/headstones/upright/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/flat/",
+      "destination": "/headstones/flat/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/angel/",
+      "destination": "/headstones/angel/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/slant/",
+      "destination": "/headstones/slant/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/bevel-markers/",
+      "destination": "/headstones/bevel/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/vases/",
+      "destination": "/headstones/vases/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/book/",
+      "destination": "/headstones/book/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/pet/",
+      "destination": "/headstones/pet/",
+      "statusCode": 301
+    },
+{
+      "source": "/tombstones-monuments/bespoke/",
+      "destination": "/headstones/bespoke/",
+      "statusCode": 301
+    }
   ]
 }

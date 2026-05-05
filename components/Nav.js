@@ -117,23 +117,38 @@ const Nav = () => {
           {/* <li><Link className="nav-link scrollto" href="/solutions/">Solutions</Link></li> */}
           {/* <li><a className="nav-link scrollto" href="/">Industries</a></li> */}
           {/* <li><a className="nav-link scrollto" href="/">Company</a></li> */}
-          <li className="dropdown"><a href="/tombstones-monuments/"><span>Tombstones</span> <i className="bi bi-chevron-down"></i></a>
+          <li className="dropdown"><a href="/tombstones-monuments/"><span>Monuments</span> <i className="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/tombstones-monuments/angel/">Angel Headstone</a></li>
-              <li><a href="/tombstones-monuments/upright/">Upright Headstones</a></li>
               <li><a href="/tombstones-monuments/columbarium/">Columbarium</a></li>
-              <li><a href="/tombstones-monuments/flat/">Flat Marker</a></li>
-              <li><a href="/tombstones-monuments/headstones/">Headstones</a></li>
-              <li><a href="/tombstones-monuments/vases/">Headstone Vases</a></li>
               <li><a href="/tombstones-monuments/kerb-sets/">Kerb Sets</a></li>
               <li><a href="/tombstones-monuments/bench/">Memorial Bench</a></li>
+              <li><a href="/tombstones-monuments/plaques/">Memorial Plaques</a></li>
+              <li><a href="/tombstones-monuments/urns/">Memorial Urns</a></li>
+               <li><a href="/tombstones-monuments/">More +</a></li>
             </ul>
           </li>
-          <li><a className="nav-link scrollto" href="/variety-of-granites/">Granite varieties</a></li>
+          <li className="dropdown"><a href="/headstones/"><span>Headstones</span> <i className="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/headstones/angel/">Angel Headstone</a></li>
+              <li><a href="/headstones/upright/">Upright Headstones</a></li>
+              <li><a href="/headstones/flat/">Flat Marker</a></li>
+              <li><a href="/headstones/vases/">Headstone Vases</a></li>
+              <li><a href="/headstones/slant/">Slant Marker</a></li>
+              <li><a href="/headstones/bevel/">Bevel Marker</a></li>
+              <li><a href="/headstones/">More +</a></li>
+            </ul>
+          </li>
+          <li className="dropdown"><a href="#"><span>Resources</span> <i className="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a className="nav-link" href="/blog/">Blogs</a></li>
+              <li><a className="nav-link" href="/variety-of-granites/">Granite varieties</a></li>
+            </ul>
+          </li>
+
           <li><a className="nav-link scrollto" href="/about-us/">About Us</a></li>
 
           <li><a style={{ color: '#a44400', fontWeight: 'bold' }} className="nav-link scrollto" href="/catalog-download/">Catalog</a></li>
-          <li><a className="nav-link" href="/blog/">Blogs</a></li>
+
           <li><a className="nav-link scrollto" href="/contact-us/">Contact Us</a></li>
           <li><a className='btn btn-one' href='/get-quote-now/'>Get a Quote</a></li>
           <li><a className='btn btn-two' href='https://wa.me/9667584700'><span><i className="bi bi-whatsapp"></i></span></a></li>
