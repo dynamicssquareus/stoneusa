@@ -18,7 +18,6 @@ const FormCta = ({ onSubmit }) => {
   const [pageUrl, setPageUrl] = useState('');
   const [loading, setLoading] = useState(false); // ✅ Add this
 
-
   useEffect(() => {
     // Fetch IP information when the component mounts
     setPageUrl(window.location.href);
