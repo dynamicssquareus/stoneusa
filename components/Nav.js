@@ -134,7 +134,7 @@ const Nav = () => {
               <li><a href="/headstones/flat/">Flat Marker</a></li>
               <li><a href="/headstones/vases/">Headstone Vases</a></li>
               <li><a href="/headstones/slant/">Slant Marker</a></li>
-              <li><a href="/headstones/bevel/">Bevel Marker</a></li>
+              <li><a href="/headstones/bevel-markers/">Bevel Marker</a></li>
               <li><a href="/headstones/">More +</a></li>
             </ul>
           </li>
