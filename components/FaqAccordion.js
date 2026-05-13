@@ -51,6 +51,14 @@ const FaqAccordion = ({ faqList = [] }) => {
       title: "How can I request wholesale pricing or a product catalog?",
       description: "The simplest way is to use the 'Request a Trade Quote' button on this page, or to call or WhatsApp our US sales line at +1 (858) 293-5368. Alternatively, email us at info@stonediscover.com with your product requirements, target market, and estimated volumes, and we will send you our current wholesale pricing sheet and product catalogue within 24 hours. We are also happy to arrange a call with our export team if you prefer to discuss your requirements directly.",
     },
+    {
+      title: "What is your production lead time for bulk granite headstone orders?",
+      description: "Standard bulk orders — typically 50 to 200 pieces — are completed within 8 to 10 weeks from confirmed payment receipt. This includes block sourcing and inspection, cutting and shaping, polishing and finishing, engraving (if applicable), quality checks, and export packaging. We provide a production schedule at the time of order confirmation and send you photo updates at the polishing and packing stages. Shipping time from India to US and Canadian ports adds a further 4 to 6 weeks depending on the destination port.",
+    },
+    {
+      title: "What quality standards do you follow?",
+      description: "Yes, Stone Discover is an ISO 9001 certified manufacturer. Our quality management system covers every stage of production — from incoming block inspection at the quarry through to final pre-shipment inspection at our facility. Each order undergoes a documented multi-point check covering dimensional tolerances, surface finish consistency, structural integrity, and packaging quality before dispatch. For buyers with specific cemetery or regulatory standards in their market, we are happy to discuss custom QC requirements.",
+    },
 
   ];
 

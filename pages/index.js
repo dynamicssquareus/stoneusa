@@ -358,7 +358,7 @@ export default function Home() {
                 <h2 className="m-b-30">
                   Ready to Source Granite Monuments <span> Direct from the Manufacturer</span>?
                 </h2>
-                <p>Whether you are placing your first container order or looking to switch from your current granite supplier, our export team is ready to help. Share your requirements with us — product types, volumes, target market, delivery port and we will come back to you with pricing, lead times, and a sample catalogue within 24 hours.</p>
+                <p>Whether you are placing your first container order or looking to switch from your current granite supplier, our export team is ready to help. Share your requirements with us, including product types, volumes, target market, and delivery port, and we will provide pricing, lead times, and a sample catalogue within 24 hours. Most trade enquiries receive a response within one business day. </p>
               </div>
               <div className="button-center-new text-center">
                 <a href="/get-quote-now/" className="btn btn-three">
@@ -382,7 +382,7 @@ export default function Home() {
                 <h2 className="m-b-30">
                  Custom Engraving & <span>Blank Headstone Supply</span>
                 </h2>
-                <p>All granite headstones in our range are available with custom engraving completed at our facility in India, or as polished blank slabs ready for local engraving by your team. Common engraving options include sandblast engraving, laser engraving, and hand-painted lettering. Custom religious symbols, portraits, and bespoke border designs are available on request. Minimum quantities apply for custom engraving options — contact our team for details.</p>
+                <p>All granite headstones in our range are available with custom engraving completed at our facility in India, or as polished blank Headstone ready for local engraving by your team. Common engraving options include sandblast engraving, laser engraving, and hand-painted lettering. Custom religious symbols, portraits, and bespoke border designs are available on request. Minimum quantities apply for custom engraving options — contact our team for details.</p>
               </div>
             </div>
           </div>

@@ -63,8 +63,7 @@ const Footer = ({ faq }) => {
                                     <Image src="/stone-logo.png" alt="stone-logo" width={200} height={30} />
                                     {/* <span>FlexStart</span> */}
                                 </a>
-                                <p>Stone Discover is a leading Indian exporter and manufacturer of premium granite memorial monuments, serving memorial dealers and retailers worldwide since 1984. We specialize exclusively in granite headstones, including upright monuments, angel memorials, vases, bench memorials, columbariums, and custom-designed memorial products.
-</p>
+                                <p>Stone Discover is a direct manufacturer and wholesale exporter of premium granite monuments from India — supplying memorial dealers, funeral homes, and cemetery suppliers across the USA, Canada, Australia, and Europe since 1984. Factory-direct. ISO 9001 certified. No middlemen.</p>
                                 <div className="social-links mt-3">
                                     <a href="https://www.linkedin.com/company/stonediscover/" className="linkedin" target='_blank'><i className="bi bi-linkedin"></i></a>
                                     <a href="https://in.pinterest.com/stone_discover_india/" className="facebook" target='_blank'><i className="bi bi-pinterest"></i></a>
@@ -78,7 +77,7 @@ const Footer = ({ faq }) => {
                                     <li><i className="bi bi-chevron-right"></i> <a href="/about-us/">About us</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/">Monuments</a></li>
                                       <li><i className="bi bi-chevron-right"></i> <a href="/headstones/">Headstone</a></li>
-                                    {/* <li><i className="bi bi-chevron-right"></i> <a href="/natural-stones/">Natural Stones</a></li> */}
+                                    <li><i className="bi bi-chevron-right"></i> <a href="/photo-gallery/">Photo Gallery</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/blog/">Blogs</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/contact-us/">Contact Us</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/terms-of-use/">Terms of service</a></li>
@@ -88,11 +87,11 @@ const Footer = ({ faq }) => {
                             <div className="col-lg-2 col-6 footer-links">
                                 <h4>Our Products</h4>
                                 <ul>
-                                    <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/angel/">Angel Headstone</a></li>
-                                    <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/book/">Book Headstones</a></li>
+                                    <li><i className="bi bi-chevron-right"></i> <a href="/headstones/angel/">Angel Headstone</a></li>
+                                    <li><i className="bi bi-chevron-right"></i> <a href="/headstones/book/">Book Headstones</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/columbarium/">Columbarium</a></li>
-                                    <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/flat/">Flat Marker</a></li>
-                                    <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/vases/">Headstone Vases</a></li>
+                                    <li><i className="bi bi-chevron-right"></i> <a href="/headstones/flat/">Flat Marker</a></li>
+                                    <li><i className="bi bi-chevron-right"></i> <a href="/headstones/vases/">Headstone Vases</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/kerb-sets/">Kerb Sets</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/bench/">Memorial Bench</a></li>
                                 </ul>

@@ -7,17 +7,17 @@
         {
           "title": "Upright Headstone",
           "img": "/img/webpages/usa-01.png",
-          "href": "/tombstones-monuments/upright/"
+          "href": "/headstones/upright/"
         },
         {
           "title": "Slant Headstone",
           "img": "/img/webpages/usa-02.png",
-          "href": "/tombstones-monuments/slant/"
+          "href": "/headstones/slant/"
         },
         {
           "title": "Flat Grave Marker",
           "img": "/img/webpages/usa-03.png",
-          "href": "/tombstones-monuments/flat/"
+          "href": "/headstones/flat/"
         },
         {
           "title": "Memorial Bench",
@@ -27,26 +27,26 @@
         {
           "title": "Vases",
           "img": "/img/webpages/usa-05.png",
-          "href": "/tombstones-monuments/vases/"
+          "href": "/headstones/vases/"
         },
         {
           "title": "Bevel",
           "img": "/img/webpages/usa-06.png",
-          "href": "/tombstones-monuments/bevel-markers/"
+          "href": "/headstones/bevel-markers/"
         },
         {
           "title": "Angel Memorial",
           "img": "/img/webpages/Angel-Memorial.png",
-          "href": "/tombstones-monuments/bevel-markers/"
+          "href": "/headstones/angel/"
         },
         {
           "title": "Heart Headstone",
           "img": "/img/webpages/Heart-Headstone.png",
-          "href": "/tombstones-monuments/bevel-markers/"
+          "href": "/headstones/"
         },{
           "title": "Double Headstone",
           "img": "/img/webpages/Double-Headstone.png",
-          "href": "/tombstones-monuments/bevel-markers/"
+          "href": "/headstones/"
         }
       ]
     }

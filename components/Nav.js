@@ -142,6 +142,7 @@ const Nav = () => {
             <ul>
               <li><a className="nav-link" href="/blog/">Blogs</a></li>
               <li><a className="nav-link" href="/variety-of-granites/">Granite varieties</a></li>
+               <li><a className="nav-link" href="/photo-gallery/">Photo Gallery</a></li>
             </ul>
           </li>
 
@@ -216,6 +217,7 @@ const Nav = () => {
                 <DropdownComponent id="solutionsDropdown" label="Drop Down" items={solutionsItems} /> */}
                 {/* <DropdownComponent label="Resources" items={resourceItems} /> */}
                 <li><a className="nav-link scrollto" href="/tombstones-monuments/">Tombstones</a></li>
+                <li><a className="nav-link scrollto" href="/headstones/">Headstones</a></li>
                 <li><a className="nav-link scrollto" href="/about-us/">About US</a></li>
                 <li><a className="nav-link" href="/blog/">Blogs</a></li>
                 {/* <Dropdown nav isOpen={dropdownOpen} toggle={toggles}>
