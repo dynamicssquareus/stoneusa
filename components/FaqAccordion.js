@@ -17,39 +17,39 @@ const FaqAccordion = ({ faqList = [] }) => {
   const defaultFaqs = [
     {
       title: "Are you a granite headstone manufacturer or trader?",
-      description: "Stone Discover India is a direct granite headstone manufacturer in India. We operate our own granite processing facilities and export factory-made granite headstones directly to international B2B buyers and retailers.",
+      description: "Stone Discover is a direct manufacturer — not a broker, agent, or trading company. We own and operate our own granite processing and manufacturing facilities in India, sourcing granite blocks from our quarry base in Khammam, Telangana. Every headstone we export is factory-made by our own team and shipped directly to our international B2B buyers without any intermediary in the chain. This means you get manufacturer pricing, direct communication, and full accountability over quality.",
     },
     {
       title: "Do you supply granite headstones on a wholesale basis?",
-      description: "We specialize exclusively in wholesale granite headstone supply for cemeteries, monument dealers, funeral homes, memorial parks, and granite distributors. We mostly prefer bulk orders and long-term supply contracts.",
+      description: "Yes — wholesale supply is our core business model. We supply granite headstones in bulk to monument dealers, funeral homes, cemetery suppliers, memorial parks, and wholesale distributors across the USA, Canada, and other international markets. We work primarily on container-based wholesale orders and long-term supply contracts. If you are looking for a reliable, recurring supply of granite headstones at competitive wholesale pricing, we are set up exactly for that.",
     },
     {
       title: "Which countries do you export granite headstones to?",
-      description: "We export granite headstones worldwide. Speaking specifically, we are currently serving  USA, Canada, UK, Germany, France, Australia & New Zealand, with other parts of the world as well.",
+      description: "Our primary export markets are the USA and Canada, where we have established supply relationships with monument dealers and wholesale distributors. We also export regularly to Australia, the United Kingdom, Germany, France, Ireland, and New Zealand. For North American buyers, we ship to major ports including Los Angeles, Houston, New York, and Vancouver. If your market is not listed here, contact us — we have shipped to over 70 countries and can discuss logistics for most destinations.",
     },
     {
       title: "Do you manufacture black granite headstones?",
-      description: "Yes, we manufacture and export premium <a href=\"/tombstones-monuments/headstones/\">black granite headstones</a> along with other Indian granite varieties. Our black granite headstones are widely supplied to overseas cemetery dealers and monument markets.",
+      description: "Yes. Absolute Black granite headstones are our most exported product line, particularly to the USA and Canada where black granite is the dominant material in most cemetery markets. Our Absolute Black granite is sourced from quarries in Telangana and is Grade A monument quality — dense, low-porosity, with a consistent deep black surface that holds its polish outdoors for decades. We also manufacture headstones in Steel Grey, Bahama Blue, Imperial Red, Viscount White, and other Indian granite varieties on request.",
     },
     {
       title: "What different varieties of Headstones do you offer?",
-      description: "We specialize exclusively in granite headstones, including <a href=\"/tombstones-monuments/upright/\">upright headstones</a>, angel memorials, vases, bench memorials, columbarium, and custom-designed memorial products.",
+      description: "Our full product range includes upright headstones (standard and bevel), angel headstones, flat grave markers, book headstones, kerb sets, headstone vases, memorial benches, and columbarium units. All products are available in multiple granite colors and can be supplied plain (blank) or with custom engraving. We can also produce bespoke designs — custom shapes, sculpted figures, religious motifs, and non-standard sizes — on request, with minimum order quantities depending on the design complexity.",
     },
     {
       title: "Can you supply granite blank headstones for local engraving?",
-      description: "Yes, we supply granite blank headstones in bulk, allowing overseas buyers to perform local engraving while benefiting from cost-effective manufacturing and consistent quality from India.",
+      description: "Yes, and this is one of our most popular services for dealers in the USA and Canada. We supply polished blank granite headstones — upright, flat, bevel, and slant styles — in standard US and Canadian cemetery dimensions, ready for local sandblast or laser engraving. Buying blank from us gives you the cost advantage of Indian manufacturing while retaining full control over the lettering and personalization process at your end. Contact us for blank headstone pricing and available dimensions.",
     },
     {
       title: "What is your minimum order quantity (MOQ)?",
-      description: "Minimum order quantity depends on the product type, size, and customization requirements. We primarily handle container-based wholesale orders and want buyers to contact us for MOQ details.",
+      description: "Our standard MOQ starts at 10 pieces per design for wholesale orders. For full container (FCL) orders, we recommend a mixed order of 50 or more pieces across product types to maximise container efficiency and shipping value. For bespoke or custom-carved designs, higher minimums may apply depending on the complexity of the fabrication. We are happy to discuss MOQ flexibility for buyers placing their first order or testing a new product line — reach out and we will find a workable arrangement.",
     },
     {
       title: "How are granite headstones packed for export?",
-      description: "Granite headstones are securely packed in fumigated wooden crates with internal protective materials like bubble wrapping to prevent damage during ocean transit and ensure safe international delivery.",
+      description: "Every headstone is packed in a fumigated wooden crate — required for US and Canadian customs clearance — with internal foam separators, acid-free plastic wrapping around polished surfaces, and corner protection on all edges. The crating design is tested specifically for FCL and LCL ocean freight conditions. Polished black granite surfaces are additionally wrapped with acid-free film to prevent moisture and tannin staining from the wood during long-haul shipping. We have a near-zero damage rate on delivered shipments as a result of this process.",
     },
     {
       title: "How can I request wholesale pricing or a product catalog?",
-      description: "You can contact us directly through our website to request wholesale pricing, product catalogs, or to discuss custom granite headstone manufacturing and bulk supply requirements.",
+      description: "The simplest way is to use the 'Request a Trade Quote' button on this page, or to call or WhatsApp our US sales line at +1 (858) 293-5368. Alternatively, email us at info@stonediscover.com with your product requirements, target market, and estimated volumes, and we will send you our current wholesale pricing sheet and product catalogue within 24 hours. We are also happy to arrange a call with our export team if you prefer to discuss your requirements directly.",
     },
 
   ];

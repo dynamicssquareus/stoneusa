@@ -6,16 +6,16 @@ const VarietyGr = () => {
   return (
     <>
       <Head>
-        <title>40+ Granite Varieties for Crafting Headstones | Stone Discover</title>
+        <title>Granite Colors for Headstones & Monuments | Stone Discover</title>
         <meta
           name="description"
-          content="Explore 40+ granite varieties for crafting headstones and memorial monuments. Premium quality granite options supplied by Stone Discover India."
+          content="Explore premium granite colors for headstones, cemetery monuments, kerb sets, and memorials. Stone Discover supplies monument-grade granite for B2B buyers across North America."
         />
         <link rel="canonical" href="https://www.stonediscover.com/variety-of-granites/" />
         <meta property="og:locale" content="US" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content=" 40+ Granite Varieties for Crafting Headstones | Stone Discover" />
-        <meta property="og:description" content=" Explore 40+ granite varieties for crafting headstones and memorial monuments. Premium quality granite options supplied by Stone Discover India." />
+        <meta property="og:title" content=" Granite Colors for Headstones & Monuments | Stone Discover" />
+        <meta property="og:description" content=" Explore premium granite colors for headstones, cemetery monuments, kerb sets, and memorials. Stone Discover supplies monument-grade granite for B2B buyers across North America." />
         <meta property="og:url" content="https://www.stonediscover.com/variety-of-granites/" />
         <meta property="og:site_name" content="Stone Discover" />
         <meta property="og:image" content="https://www.stonediscover.com/img/stone-home-o.jpeg" />
@@ -24,8 +24,8 @@ const VarietyGr = () => {
         <meta property="og:image:type" content="image/jpeg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Stone Discover" />
-        <meta name="twitter:title" content=" 40+ Granite Varieties for Crafting Headstones | Stone Discover" />
-        <meta name="twitter:description" content=" Explore 40+ granite varieties for crafting headstones and memorial monuments. Premium quality granite options supplied by Stone Discover India." />
+        <meta name="twitter:title" content=" Granite Colors for Headstones & Monuments | Stone Discover" />
+        <meta name="twitter:description" content=" Explore premium granite colors for headstones, cemetery monuments, kerb sets, and memorials. Stone Discover supplies monument-grade granite for B2B buyers across North America." />
         <meta name="twitter:image" content="https://www.stonediscover.com/img/stone-home-o.jpeg" />
 
       </Head>
@@ -35,7 +35,7 @@ const VarietyGr = () => {
           <div className='row justify-content-center'>
             <div className='col-lg-9'>
               <div className='heading-center p-b-40'>
-                <h1 className='m-b-30 cc-text'>Popular Granite <span>Varieties</span> We Offer</h1>
+                <h1 className='m-b-30 cc-text'>Granite Colors for <span>Headstones & Monuments</span></h1>
               </div>
             </div>
           </div>

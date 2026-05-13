@@ -31,8 +31,8 @@ export default function HomeSlider() {
                 <SwiperSlide>
                     <div className='card-02-item'>
                         <a href="/about-us/">
-                            <Image src='/img/pic-1.jpg' alt='Selection of Blocks' className='img-fluid' width={646} height={818} />
-                            <h3>Selection of Blocks</h3>
+                            <Image src='/img/pic-1.jpg' alt='Quarry Block Selection' className='img-fluid' width={646} height={818} />
+                            <h3>Quarry Block Selection</h3>
                         </a>
                     </div>
                 </SwiperSlide>
@@ -47,16 +47,16 @@ export default function HomeSlider() {
                 <SwiperSlide>
                     <div className='card-02-item'>
                         <a href="/about-us/">
-                            <Image src='/img/pic-3.jpg' alt='Stone Carving' className='img-fluid' width={646} height={818} />
-                            <h3>Stone Carving</h3>
+                            <Image src='/img/pic-3.jpg' alt='Hand Carving & Engraving' className='img-fluid' width={646} height={818} />
+                            <h3>Hand Carving & Engraving</h3>
                         </a>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='card-02-item'>
                         <a href="/about-us/">
-                            <Image src='/img/pic-4.jpg' alt='Customization of Monuments' className='img-fluid' width={646} height={818} />
-                            <h3>Customization of Monuments</h3>
+                            <Image src='/img/pic-4.jpg' alt='Custom Memorial Fabrication' className='img-fluid' width={646} height={818} />
+                            <h3>Custom Memorial Fabrication</h3>
                         </a>
                     </div>
                 </SwiperSlide>
@@ -71,8 +71,8 @@ export default function HomeSlider() {
                 <SwiperSlide>
                     <div className='card-02-item'>
                         <a href="/about-us/">
-                            <Image src='/img/pic-6.jpg' alt='Packaging & Shipping' className='img-fluid' width={646} height={471} />
-                            <h3>Packaging & Shipping</h3>
+                            <Image src='/img/pic-6.jpg' alt='Export Packaging & Container Dispatch' className='img-fluid' width={646} height={471} />
+                            <h3>Export Packaging & Container Dispatch</h3>
                         </a>
                     </div>
                 </SwiperSlide>

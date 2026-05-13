@@ -84,12 +84,12 @@ export default function Home() {
             <div className="col-lg-12 text-center">
               <div className="hero-banner-content">
                 <h1>Granite Monuments Manufacturer, Supplier & Exporter </h1>
-                <p>Supplying premium granite headstones, tombstones & gravestones from India to the USA, Canada, Europe, and Global B2B markets.</p>
+                <p>Premium granite memorials crafted at our own factory in India — supplying monument dealers, funeral homes, and cemetery suppliers across the USA and Canada since 1984. No middlemen. No markups.</p>
                 <div className="hero-banner-btn">
                   <ModelBox
                     className="btn-three"
                     headerText="Scale Your Store!"
-                    buttonText="Get Quote Now"
+                    buttonText="Request a Quote"
                   />
                   {/* <ModelBox className="btn-transparent" headerText="Scale Your Store!" buttonText="Request Catalogue" /> */}
                 </div>
@@ -122,16 +122,13 @@ export default function Home() {
             <div className="col-lg-6 align-self-center">
               <div className="about-us-content">
                 <h2>
-                  The legacy of <span>Stone Discover</span>
+                  Who We Are and Why It Matters to Your Business
                 </h2>
-                <p>
-                  Stone Discover is a leading Indian exporter and manufacturer of premium granite headstones, tombstones & gravestones, monuments, serving memorial dealers, cemeteries and retailers worldwide since 1984. We specialize exclusively in granite headstones, including upright headstones, angel headstones, vases, bench memorials, columbarium, and custom-designed memorial products.
-                </p>
-                <p>All our granite monuments are carefully selected, expertly crafted, and manufactured at our own facilities in India, ensuring consistent quality and durability. With a strong focus on bulk supply, timely global delivery, and competitive B2B pricing, we are committed to building long-term partnerships across international memorial markets.
-</p>
+                <p>Stone Discover has been a direct-manufacturer and wholesale exporter of premium granite monuments,  supplying memorial dealers, funeral homes, cemetery suppliers, and wholesale distributors across the USA, Canada, Australia, and Europe since 1984. We are not a trading company or a middleman. We own and operate our complete production chain, from granite sourcing at our quarry base in Khammam, Telangana, through manufacturing at our processing facility, to export-grade packaging and direct container shipment.</p>
+                <p>Every headstone that leaves our facility has been through a documented quality process, block inspection at source, precision cutting and polishing, multi-point surface checks, and secure export packaging. With a consistent production capacity for bulk and container-load orders, we are built for long-term supply partnerships — not one-off transactions. If you are looking for a granite headstone supplier you can rely on month after month, that is exactly what we have been doing since 1984.</p>
                 <div className="d-flex-grd">
                   <div className="grif-list">
-                    <span>38+</span>
+                    <span>40+</span>
                     <p>Years of Expertise</p>
                   </div>
                   <div className="grif-list">
@@ -139,8 +136,8 @@ export default function Home() {
                     <p>Countries</p>
                   </div>
                   <div className="grif-list">
-                    <span>38+</span>
-                    <p>Memorial Shipped Annually</p>
+                    <span>10,000+</span>
+                    <p>Headstones Exported</p>
                   </div>
                 </div>
                 <a href="/about-us/" className="btn btn-four m-t-30">
@@ -170,10 +167,9 @@ export default function Home() {
             <div className="col-lg-10 text-center">
               <div className="heading-center p-b-40">
                 <h2 className="m-b-20">
-                  The Journey of<span> Granite Memorials,</span> From Selection
-                  to Global Supply!
+                  <span>From Our Quarry in India to Your Warehouse Door</span>
                 </h2>
-                <p>At Stone Discover India, the journey of every headstone begins with the careful selection of premium granite blocks sourced from trusted quarries across India. These blocks are processed at our dedicated manufacturing units, where skilled craftsmen shape, finish, and polish each monument with precision. With a strong focus on bulk manufacturing, export-ready packaging, and timely international delivery, we support long-term B2B supply requirements for memorial markets worldwide.</p>
+                <p>We source our granite directly from Khammam, Telangana, one of India's most reliable regions for dense, polishable black and grey granite. Blocks are inspected at the quarry before they reach our processing facility, where they go through precision cutting, hand-finishing, surface polishing, and final quality checks. The result is a headstone that is dimensionally accurate, surface-consistent, and export-ready — packed in fumigated wooden crates designed to survive ocean freight to the USA and Canada without damage.</p>
               </div>
             </div>
           </div>
@@ -190,12 +186,7 @@ export default function Home() {
             <div className="col-lg-9">
               <div className="heading-center p-b-40">
                 <h2 className="m-b-30">Pillars of Strength</h2>
-                <p>
-                  Whether you’re a high-volume buyer or expanding your product
-                  line, our team is here to support your growth. We understand
-                  the B2B dynamics of the memorial industry and deliver not just
-                  products—but trust, consistency, and partnership.
-                </p>
+                <p>We have spent over four decades building a supply system that monument dealers and funeral homes can depend on. These are the five things our trade partners tell us matter most — and the five things we have built our business around.</p>
               </div>
             </div>
           </div>
@@ -212,10 +203,7 @@ export default function Home() {
                     height={48}
                   />
                   <span>Finest Quality Stones</span>
-                  <p>
-                    We ensure that each headstone is crafted with great
-                    attention to detail
-                  </p>
+                  <p>Each headstone is sourced from certified quarries and passes a multi-point quality inspection before shipment.</p>
                 </div>
                 <div className="card-05-item">
                   <Image
@@ -225,8 +213,9 @@ export default function Home() {
                     width={48}
                     height={48}
                   />
-                  <span>Competitive Prices</span>
-                  <p>Get Quality headstones at the Best Rates!</p>
+                  <span>Factory-Direct Pricing</span>
+                  <p> No agents, no brokers. You buy directly from the manufacturer — which means better margins for your business.
+                  </p>
                 </div>
                 <div className="card-05-item">
                   <Image
@@ -237,7 +226,8 @@ export default function Home() {
                     height={48}
                   />
                   <span>On-time Delivery</span>
-                  <p>Ensuring Your tombstones Arrive When You Need Them!</p>
+                  <p>Standard bulk orders are produced and dispatched within 8-10 weeks. We keep you updated at every stage.
+                  </p>
                 </div>
                 <div className="card-05-item">
                   <Image
@@ -248,7 +238,8 @@ export default function Home() {
                     height={48}
                   />
                   <span>Bulk Order</span>
-                  <p>Streamline Your Business with Our Premium tombstones!</p>
+                  <p> From mixed LCL consignments to full container orders — we have the capacity and systems to scale with your business.
+                  </p>
                 </div>
                 <div className="card-05-item">
                   <Image
@@ -259,7 +250,8 @@ export default function Home() {
                     height={48}
                   />
                   <span>Shipping Worldwide</span>
-                  <p>Delivering Quality tombstones Everywhere!</p>
+                  <p>We ship direct to US and Canadian ports — Los Angeles, New York, Houston, Vancouver — with full export documentation.
+                  </p>
                 </div>
               </div>
             </div>
@@ -283,9 +275,10 @@ export default function Home() {
             </div>
             <div className="col-lg-6 align-self-center">
               <div className="about-us-content">
-                <h2>Why Choose Stone Discover</h2>
-                <p>Stone Discover is a trusted manufacturer and global exporter of premium granite headstones since 1984. We specialize exclusively in granite headstones and memorial products, including tombstones, monuments, gravestones, grave markers, and custom headstones designs for international B2B markets.
-</p>
+                <h2>Why Monument Dealers Choose Stone Discover
+                </h2>
+                <p>There are many granite exporters in India. What sets Stone Discover apart is not just what we make but it's how we operate. We own our granite source, run our own factory, manage our own quality checks, and ship directly. That means when you place an order with us, you are dealing with the people who cut the stone anot a sales office that contracts it out.
+                </p>
                 <ul className="my-flex-item">
                   <li>
                     <div>
@@ -344,12 +337,7 @@ export default function Home() {
                 <h2 className="m-b-30">
                   Timeless <span>Craftsmanship Across</span> Borders
                 </h2>
-                <p>
-                  We export granite headstone monuments to international
-                  markets, meeting region-specific standards and preferences.
-                  With active exports across the UK, USA, Canada, Europe,
-                  Australia, and New Zealand, we deliver consistent quality
-                  worldwide.
+                <p>Stone Discover ships granite headstones direct to the USA and Canada on a regular container schedule, with established logistics to key ports including Los Angeles, Houston, New York, and Vancouver. All shipments come with full export documentation, fumigated wooden crate packaging, and damage-free delivery commitment. We also supply to Australia, the United Kingdom, Germany, France, Ireland, and New Zealand, making us a single-source granite supplier for distributors operating across multiple markets.
                 </p>
               </div>
             </div>
@@ -368,23 +356,16 @@ export default function Home() {
             <div className="col-lg-9">
               <div className="heading-center p-b-40">
                 <h2 className="m-b-30">
-                  Partner with a Trusted <span>Granite Monuments Exporter</span>
+                  Ready to Source Granite Monuments <span> Direct from the Manufacturer</span>?
                 </h2>
-                <p>
-                  Whether you are sourcing in bulk or expanding your memorial
-                  range, Stone Discover supports your business with reliable
-                  granite headstones supply, consistent quality, and export
-                  expertise. We work closely with memorial dealers and retailers
-                  worldwide to ensure long-term supply partnerships built on
-                  trust and performance.
-                </p>
+                <p>Whether you are placing your first container order or looking to switch from your current granite supplier, our export team is ready to help. Share your requirements with us — product types, volumes, target market, delivery port and we will come back to you with pricing, lead times, and a sample catalogue within 24 hours.</p>
               </div>
               <div className="button-center-new text-center">
                 <a href="/get-quote-now/" className="btn btn-three">
-                  Request a Quote
+                  Request a Trade Quote
                 </a>
                 <a href="/catalog-download/" className="btn btn-four">
-                  Request Catalogue
+                  Download Trade Catalogue
                 </a>
               </div>
             </div>
@@ -392,15 +373,16 @@ export default function Home() {
         </div>
       </section>
 
-      
+
       <section className="p-b-80 p-t-60">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-9">
               <div className="heading-center p-b-40">
                 <h2 className="m-b-30">
-                  Custom Engraving on <span>Granite Headstones</span>
+                 Custom Engraving & <span>Blank Headstone Supply</span>
                 </h2>
+                <p>All granite headstones in our range are available with custom engraving completed at our facility in India, or as polished blank slabs ready for local engraving by your team. Common engraving options include sandblast engraving, laser engraving, and hand-painted lettering. Custom religious symbols, portraits, and bespoke border designs are available on request. Minimum quantities apply for custom engraving options — contact our team for details.</p>
               </div>
             </div>
           </div>
@@ -633,7 +615,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
     </>
   );
 }

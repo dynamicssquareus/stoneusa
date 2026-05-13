@@ -68,7 +68,7 @@ const Footer = ({ faq }) => {
                                 <div className="social-links mt-3">
                                     <a href="https://www.linkedin.com/company/stonediscover/" className="linkedin" target='_blank'><i className="bi bi-linkedin"></i></a>
                                     <a href="https://in.pinterest.com/stone_discover_india/" className="facebook" target='_blank'><i className="bi bi-pinterest"></i></a>
-                                    <a href="https://www.instagram.com/stone_discover_india/" className="instagram" target='_blank'><i className="bi bi-instagram"></i></a>
+                                    <a href="https://www.instagram.com/stone_discover/" className="instagram" target='_blank'><i className="bi bi-instagram"></i></a>
 
                                 </div>
                             </div>
@@ -76,8 +76,9 @@ const Footer = ({ faq }) => {
                                 <h4>Company</h4>
                                 <ul>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/about-us/">About us</a></li>
-                                    <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/">Tombstones</a></li>
-                                    <li><i className="bi bi-chevron-right"></i> <a href="/natural-stones/">Natural Stones</a></li>
+                                    <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/">Monuments</a></li>
+                                      <li><i className="bi bi-chevron-right"></i> <a href="/headstones/">Headstone</a></li>
+                                    {/* <li><i className="bi bi-chevron-right"></i> <a href="/natural-stones/">Natural Stones</a></li> */}
                                     <li><i className="bi bi-chevron-right"></i> <a href="/blog/">Blogs</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/contact-us/">Contact Us</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/terms-of-use/">Terms of service</a></li>
@@ -91,7 +92,6 @@ const Footer = ({ faq }) => {
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/book/">Book Headstones</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/columbarium/">Columbarium</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/flat/">Flat Marker</a></li>
-                                    <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/headstones/">Granite Headstones</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/vases/">Headstone Vases</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/kerb-sets/">Kerb Sets</a></li>
                                     <li><i className="bi bi-chevron-right"></i> <a href="/tombstones-monuments/bench/">Memorial Bench</a></li>

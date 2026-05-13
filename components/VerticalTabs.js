@@ -27,9 +27,9 @@ export default function VerticalTabs() {
 
   return (
     <>
-      <Row>
+      <Row className="justify-content-center">
         {/* Left Tabs */}
-        <Col md="3" className="mb-md-0 g-0 horz-nav-tab-ull">
+        {/* <Col md="3" className="mb-md-0 g-0 horz-nav-tab-ull">
           <Nav pills vertical>
             {tabsData.map((tab) => (
               <NavItem key={tab.id}>
@@ -42,7 +42,7 @@ export default function VerticalTabs() {
               </NavItem>
             ))}
           </Nav>
-        </Col>
+        </Col> */}
 
         {/* Right Content */}
         <Col md="9" className="g-0">
