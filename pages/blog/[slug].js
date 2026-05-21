@@ -122,6 +122,7 @@ const BlogPost = ({ post, relatedPosts, relatedHeading, categories, error }) => 
     <>
       <Head>
         <title>{post.metaTitle || post.title}</title>
+        {post.noindex === true && <meta name="robots" content="noindex, nofollow" />}
         <meta name="description" content={post.metaDescription || post.excerpt || ''} />
         <link rel="canonical" href={canonicalUrl} />
         {post.metaKeywords && <meta name="keywords" content={post.metaKeywords} />}

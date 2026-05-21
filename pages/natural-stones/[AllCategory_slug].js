@@ -97,7 +97,7 @@ const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
   return (
     <>
       <Head>
-        <meta name="robots" content="noindex, nofollow" />
+         {primary.noindex === true && <meta name="robots" content="noindex, nofollow" />}
         <title>{primary.metaTitle || primary.title || category?.title}</title>
         <meta name="description" content={primary.metaDescription || primary.excerpt || ''} />
         <link rel="canonical" href={canonicalUrl} />

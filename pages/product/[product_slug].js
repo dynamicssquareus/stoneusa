@@ -45,13 +45,13 @@ const ProductPage = ({ product, relatedProducts, specifications, error }) => {
   const metaTitle =
     product?.metaTitle ||
     product?.title ||
-    'UK’s Trusted Supplier of Memorial Stones | Stone Discover UK';
+    'Wholesale Supplier of Granite Monuments | Stone Discover USA';
 
   const metaDescription =
     product?.metaDescription ||
     product?.excerpt ||
     product?.shortdescription ||
-    'Stone Discover UK supplies high-quality memorial stones at wholesale prices.';
+    'Stone Discover USA supplies high-quality memorial stones at wholesale prices.';
 
   // image selection
   const metaImage =
@@ -111,6 +111,7 @@ const ProductPage = ({ product, relatedProducts, specifications, error }) => {
     <>
       <Head>
         <title>{metaTitle}</title>
+         {product.noindex === true && <meta name="robots" content="noindex, nofollow" />}
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
 
