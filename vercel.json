@@ -185,11 +185,7 @@
       "destination": "/tombstones-monuments/book/",
       "statusCode": 301
     },
-    {
-      "source": "/bevel-grave-marker/",
-      "destination": "/tombstones-monuments/bevel-markers/",
-      "statusCode": 301
-    },
+
 
     {
       "source": "/request-quote/",
@@ -686,7 +682,7 @@
     },
 {
       "source": "/tombstones-monuments/bevel-markers/",
-      "destination": "/headstones/bevel/",
+      "destination": "/headstones/bevel-markers/",
       "statusCode": 301
     },
 {
@@ -705,6 +701,11 @@
       "statusCode": 301
     },
 {
+      "source": "/tombstones-monuments/bespoke/",
+      "destination": "/headstones/bespoke/",
+      "statusCode": 301
+    },
+    {
       "source": "/tombstones-monuments/bespoke/",
       "destination": "/headstones/bespoke/",
       "statusCode": 301
