@@ -286,7 +286,7 @@ const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
                       </AccordionHeader>
                       <AccordionBody accordionId="1">
                         <p>No middlemen. No markups. Just direct supply from our own facilities in India.</p>
-                        <p>We own and operate our full production chain — from granite sourcing at Khammam quarry in Telangana to manufacturing at our Chennai factory. This means:</p>
+                        <p>We own and operate our full production chain — from granite sourcing at Khammam quarry in Telangana to manufacturing at our Sangareddy factory. This means:</p>
                         <ul>
                           <li>Competitive wholesale & B2B export pricing on every order</li>
                           <li>Consistent supply with no third-party dependency</li>
@@ -304,7 +304,7 @@ const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
                       </AccordionHeader>
                       <AccordionBody accordionId="2">
                         <p>Every piece that ships from our facility is built to last — outdoors, for decades.</p>
-                        <p>Our memorials are crafted from premium Indian granite, quarry-sourced directly from Telangana and processed at our Chennai plant. Each product goes through a strict multi-stage quality check covering:</p>
+                        <p>Our memorials are crafted from premium Indian granite, quarry-sourced directly from Telangana and processed at our Sangareddy plant. Each product goes through a strict multi-stage quality check covering:</p>
                         <ul>
                           <li>Surface finishing and polish consistency</li>
                           <li>Dimensional accuracy to US cemetery specifications</li>
@@ -344,7 +344,7 @@ const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
                         </div>
                       </AccordionHeader>
                       <AccordionBody accordionId="4">
-                        <p>From our production floor in Chennai to your warehouse — reliable, trackable, and hassle-free.</p>
+                        <p>From our production floor in Sangareddy to your warehouse — reliable, trackable, and hassle-free.</p>
                         <p>Stone Discover exports granite memorials directly to the USA with full logistics support:</p>
                         <ul>
                           <li>Export-ready crating and packaging</li>
