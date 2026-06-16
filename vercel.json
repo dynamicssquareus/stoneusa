@@ -162,12 +162,12 @@
       "statusCode": 301
     },
     {
-      "source": "/natural-stones",
+      "source": "/natural-stones/",
       "destination": "/headstones/",
       "statusCode": 301
     },
     {
-      "source": "/natural-stones/granite",
+      "source": "/natural-stones/granite/",
       "destination": "/variety-of-granites/",
       "statusCode": 301
     },
@@ -177,7 +177,7 @@
       "statusCode": 301
     },
     {
-      "source": "/natural-stones/marble",
+      "source": "/natural-stones/marble/",
       "destination": "/headstones/",
       "statusCode": 301
     },
@@ -187,7 +187,7 @@
       "statusCode": 301
     },
     {
-      "source": "/natural-stones/limestone",
+      "source": "/natural-stones/limestone/",
       "destination": "/tombstones-monuments/",
       "statusCode": 301
     },
@@ -197,7 +197,7 @@
       "statusCode": 301
     },
     {
-      "source": "/natural-stones/sandstone",
+      "source": "/natural-stones/sandstone/",
       "destination": "/tombstones-monuments/",
       "statusCode": 301
     },
@@ -207,7 +207,7 @@
       "statusCode": 301
     },
     {
-      "source": "/natural-stones/cobble-stone",
+      "source": "/natural-stones/cobble-stone/",
       "destination": "/tombstones-monuments/",
       "statusCode": 301
     },
@@ -217,7 +217,7 @@
       "statusCode": 301
     },
     {
-      "source": "/natural-stones/porcelain",
+      "source": "/natural-stones/porcelain/",
       "destination": "/tombstones-monuments/",
       "statusCode": 301
     },
@@ -227,7 +227,7 @@
       "statusCode": 301
     },
     {
-      "source": "/natural-stones/quartz",
+      "source": "/natural-stones/quartz/",
       "destination": "/tombstones-monuments/",
       "statusCode": 301
     },
