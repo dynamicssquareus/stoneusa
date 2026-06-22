@@ -5,13 +5,7 @@ Allow: /
 Disallow: /blog/tag/
 Disallow: /blog/category/
 Disallow: /blog/preview/
-Disallow: /blog/stonemason/
-Disallow: /blog/limestone-vs-sandstone-which-is-the-better-choice/
-Disallow: /blog/popular-granite-colors/
-Disallow: /blog/difference-between-limestone-and-marble/
-Disallow: /blog/which-natural-stone-is-most-durable/
-Disallow: /blog/white-granite-colors/
-Disallow: /blog/general-contractor-vs-construction-company/
+
 
 
 
