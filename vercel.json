@@ -1008,44 +1008,74 @@
     },
     {
       "source": "/tombstones-monuments/slant/",
-      "destination": "/tombstones-monuments/slant/",
+      "destination": "/headstones/slant/",
       "statusCode": 301
     },
     {
       "source": "/tombstones-monuments/flat/",
-      "destination": "/tombstones-monuments/flat/",
+      "destination": "/headstones/flat/",
       "statusCode": 301
     },
 
     {
       "source": "/tombstones-monuments/pet/",
-      "destination": "/tombstones-monuments/pet/",
+      "destination": "/headstones/pet/",
       "statusCode": 301
     },
     {
       "source": "/tombstones-monuments/vases/",
-      "destination": "/tombstones-monuments/vases/",
+      "destination": "/headstones/vases/",
       "statusCode": 301
     },
     {
-      "source": "/angel-stones/",
-      "destination": "/tombstones-monuments/angel/",
+      "source": "/tombstones-monuments/angel/",
+      "destination": "/headstones/angel/",
       "statusCode": 301
     },
     {
       "source": "/tombstones-monuments/book/",
-      "destination": "/tombstones-monuments/book/",
+      "destination": "/headstones/book/",
       "statusCode": 301
     },
-    {
+{
       "source": "/tombstones-monuments/bevel-markers/",
       "destination": "/headstones/bevel-markers/",
       "statusCode": 301
     },
-    {
-      "source": "/product/calacatta-casade-quartz/",
-      "destination": "/tombstones-monuments/",
-      "statusCode": 301
-    }
+{
+    "source": "/product/calacatta-cascade-quartz/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+{
+  "source": "/product/black-granite-family-columbarium/",
+  "destination": "/tombstones-monuments/columbarium/",
+  "statusCode": 301
+},
+{
+  "source": "/product/:name(.*sandstone.*)",
+  "destination": "/tombstones-monuments/",
+  "statusCode": 301
+},
+{
+  "source": "/product/:name(.*limestone.*)",
+  "destination": "/tombstones-monuments/",
+  "statusCode": 301
+},
+{
+  "source": "/product/:name(.*marble.*)",
+  "destination": "/tombstones-monuments/",
+  "statusCode": 301
+},
+{
+  "source": "/product/:name(.*porcelain.*)",
+  "destination": "/tombstones-monuments/",
+  "statusCode": 301
+},
+{
+  "source": "/product/:name(.*quartz.*)",
+  "destination": "/tombstones-monuments/",
+  "statusCode": 301
+}
   ]
 }
