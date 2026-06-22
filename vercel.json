@@ -1000,6 +1000,52 @@
       "source": "/product/aurora-granite-double-flat-headstone/",
       "destination": "/headstones/flat/",
       "statusCode": 301
+    },
+    {
+      "source": "/tombstones-monuments/upright/",
+      "destination": "/headstones/upright/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tombstones-monuments/slant/",
+      "destination": "/tombstones-monuments/slant/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tombstones-monuments/flat/",
+      "destination": "/tombstones-monuments/flat/",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/tombstones-monuments/pet/",
+      "destination": "/tombstones-monuments/pet/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tombstones-monuments/vases/",
+      "destination": "/tombstones-monuments/vases/",
+      "statusCode": 301
+    },
+    {
+      "source": "/angel-stones/",
+      "destination": "/tombstones-monuments/angel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tombstones-monuments/book/",
+      "destination": "/tombstones-monuments/book/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tombstones-monuments/bevel-markers/",
+      "destination": "/headstones/bevel-markers/",
+      "statusCode": 301
+    },
+    {
+      "source": "/product/calacatta-casade-quartz/",
+      "destination": "/tombstones-monuments/",
+      "statusCode": 301
     }
   ]
 }
