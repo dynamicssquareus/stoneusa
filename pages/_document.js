@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en-US">
         <Head>
           <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
           <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
@@ -20,7 +20,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
           />
-
+          <meta property="og:locale" content="en_US" />
           <meta name="p:domain_verify" content="871307783afcc081111d141835a753bd" />
 
           {/* Google Tag Manager (head) */}

@@ -13,7 +13,6 @@ const VarietyGr = () => {
           content="Explore granite headstones and monument Photo gallery in the USA. Quality designs for monument retailers with reliable wholesale supply. Get Enquiry Now."
         />
         <link rel="canonical" href="https://www.stonediscover.com/photo-gallery/" />
-        <meta property="og:locale" content="US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content=" Granite Headstones & Monument Photo Gallery USA | Stone Discover USA" />
         <meta property="og:description" content=" Explore granite headstones and monument Photo gallery in the USA. Quality designs for monument retailers with reliable wholesale supply. Get Enquiry Now." />

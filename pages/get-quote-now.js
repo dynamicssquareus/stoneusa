@@ -22,7 +22,6 @@ const Getquote = () => {
                     content="Request a quote from Stone Discover India. Share your required details and our team will provide a customized price estimate."
                 />
                 <link rel="canonical" href=" https://www.stonediscover.com/get-quote-now/" />
-                <meta property="og:locale" content="US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=" Get a Quote | Stone Discover India" />
                 <meta property="og:description" content=" Request a quote from Stone Discover India. Share your required details and our team will provide a customized price estimate." />

@@ -23,7 +23,6 @@ export default function About() {
                     content="Learn about Stone Discover India, our mission, values, and dedication to delivering premium headstones solutions across India and worldwide."
                 />
                 <link rel="canonical" href="https://www.stonediscover.com/about-us/" />
-                <meta property="og:locale" content="US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=" About Us | Stone Discover India" />
                 <meta property="og:description" content=" Learn about Stone Discover India, our mission, values, and dedication to delivering premium headstones solutions across India and worldwide." />

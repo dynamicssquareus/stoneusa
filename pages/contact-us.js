@@ -23,7 +23,6 @@ const ContactUs = () => {
                     content="Get in touch with Stone Discover India. Contact our team for inquiries, quotes, or support, we’re here to help with all your stone requirements."
                 />
                 <link rel="canonical" href="https://www.stonediscover.com/contact-us/" />
-                <meta property="og:locale" content="US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=" Contact Us | Stone Discover India " />
                 <meta property="og:description" content=" Get in touch with Stone Discover India. Contact our team for inquiries, quotes, or support—we’re here to help with all your stone requirements." />

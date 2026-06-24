@@ -12,7 +12,6 @@ const VarietyGr = () => {
           content="Explore premium granite colors for headstones, cemetery monuments, kerb sets, and memorials. Stone Discover supplies monument-grade granite for B2B buyers across North America."
         />
         <link rel="canonical" href="https://www.stonediscover.com/variety-of-granites/" />
-        <meta property="og:locale" content="US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content=" Granite Colors for Headstones & Monuments | Stone Discover" />
         <meta property="og:description" content=" Explore premium granite colors for headstones, cemetery monuments, kerb sets, and memorials. Stone Discover supplies monument-grade granite for B2B buyers across North America." />

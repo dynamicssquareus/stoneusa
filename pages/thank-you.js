@@ -11,7 +11,6 @@ const ThankYou = () => {
                     content=" Thank you for getting in touch with Stone Discover India. We’ve received your message and our team will respond shortly with the information you need."
                 />
                 <link rel="canonical" href=" https://www.stonediscover.com/thank-you/" />
-                <meta property="og:locale" content="US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=" Thank You for Getting in Touch | Stone Discover India " />
                 <meta property="og:description" content=" Thank you for getting in touch with Stone Discover India. We’ve received your message and our team will respond shortly with the information you need." />

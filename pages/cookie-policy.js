@@ -10,7 +10,6 @@ const CookiePolicy = () => {
           content="Read the Cookie Policy of Stone Discover India to learn how we use cookies to enhance your browsing experience and analyze website performance."
         />
         <link rel="canonical" href="https://www.stonediscover.com/cookie-policy/" />
-        <meta property="og:locale" content="US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content=" Cookie Policy | Stone Discover India" />
         <meta property="og:description" content=" Read the Cookie Policy of Stone Discover India to learn how we use cookies to enhance your browsing experience and analyze website performance." />

@@ -22,7 +22,6 @@ const CatalogDownload = () => {
                     content="Download the latest product catalog from Stone Discover India. Explore our full range of premium headstones, colors, and finishes."
                 />
                 <link rel="canonical" href="https://www.stonediscover.com/catalog-download/" />
-                <meta property="og:locale" content="US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=" Catalog Download | Stone Discover India" />
                 <meta property="og:description" content=" Download the latest product catalog from Stone Discover India. Explore our full range of premium headstones, colors, and finishes." />

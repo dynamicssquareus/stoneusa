@@ -11,7 +11,6 @@ const PrivacyPolicy = () => {
                     content=" Read the Privacy Policy of Stone Discover India to understand how we collect, use, and protect your personal information."
                 />
                 <link rel="canonical" href="  https://www.stonediscover.com/privacy-policy/" />
-                <meta property="og:locale" content="US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=" Privacy Policy | Stone Discover India" />
                 <meta property="og:description" content=" Read the Privacy Policy of Stone Discover India to understand how we collect, use, and protect your personal information." />

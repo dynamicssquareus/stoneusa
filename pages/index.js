@@ -16,7 +16,6 @@ export default function Home() {
           content="Stone Discover is a leading Indian manufacturer and exporter of premium granite monuments and headstones, serving memorial dealers worldwide since 1984."
         />
         <link rel="canonical" href="https://www.stonediscover.com/" />
-        <meta property="og:locale" content="US" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"

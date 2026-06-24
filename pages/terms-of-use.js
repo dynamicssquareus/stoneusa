@@ -10,7 +10,6 @@ const TermsOfUse = () => {
                     content="Read the Terms of Use for Stone Discover India to understand the rules, conditions, and guidelines for accessing and using our website and services."
                 />
                 <link rel="canonical" href="https://www.stonediscover.com/terms-of-use/" />
-                <meta property="og:locale" content="US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=" Terms of Use | Stone Discover India" />
                 <meta property="og:description" content=" Read the Terms of Use for Stone Discover India to understand the rules, conditions, and guidelines for accessing and using our website and services." />
