@@ -96,7 +96,7 @@ const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
         {primary.metaKeywords && <meta name="keywords" content={primary.metaKeywords} />}
         <meta property="og:title" content={primary.metaTitle || primary.title || category?.title} />
         <meta property="og:description" content={primary.metaDescription || primary.excerpt || ''} />
-        <meta property="og:site_name" content="Stone Discover UK" />
+        <meta property="og:site_name" content="Stone Discover" />
         <meta
           property="og:image"
           content={

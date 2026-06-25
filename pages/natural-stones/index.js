@@ -146,13 +146,13 @@ const Index = ({ categories = [], categoryData = {} }) => {
     const metaTitle =
         categoryData?.metaTitle ||
         categoryData?.title ||
-        'UK’s Trusted Supplier of Memorial Stones | Stone Discover UK';
+        'UK’s Trusted Supplier of Memorial Stones | Stone Discover';
 
     const metaDescription =
         categoryData?.metaDescription ||
         (categoryData?.excerpt && categoryData.excerpt) ||
         categoryData?.shortdescription ||
-        'Stone Discover UK supplies high-quality memorial stones at wholesale prices. Trusted by funeral homes and retailers across the UK. Contact us today!';
+        'Stone Discover supplies high-quality memorial stones at wholesale prices. Trusted by funeral homes and retailers across the UK. Contact us today!';
 
     // choose the best image available
     const metaImage =
@@ -180,7 +180,7 @@ const Index = ({ categories = [], categoryData = {} }) => {
                 <meta property="og:title" content={metaTitle} />
                 <meta property="og:description" content={metaDescription} />
                 <meta property="og:url" content={canonicalUrl} />
-                <meta property="og:site_name" content="Stone Discover UK" />
+                <meta property="og:site_name" content="Stone Discover" />
                 <meta property="og:image" content={metaImage} />
                 <meta property="og:image:width" content={metaImageWidth} />
                 <meta property="og:image:height" content={metaImageHeight} />
@@ -188,7 +188,7 @@ const Index = ({ categories = [], categoryData = {} }) => {
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@StoneDiscoverUK" />
+                <meta name="twitter:site" content="@StoneDiscover" />
                 <meta name="twitter:title" content={metaTitle} />
                 <meta name="twitter:description" content={metaDescription} />
                 <meta name="twitter:image" content={metaImage} />
