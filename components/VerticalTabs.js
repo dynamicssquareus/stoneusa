@@ -45,7 +45,7 @@ export default function VerticalTabs() {
         </Col> */}
 
         {/* Right Content */}
-        <Col md="9" className="g-0">
+        <Col md="12" className="g-0">
           <TabContent activeTab={activeTab} className="bg-grays">
             <TabPane tabId={activeTab}>
               <div className="my-row">
@@ -79,7 +79,7 @@ export default function VerticalTabs() {
         }
           .my-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 .my-row .cards.cards-new {
@@ -146,7 +146,14 @@ export default function VerticalTabs() {
     background-color: #fbf8f4;
      color: #000;
     }
-
+        @media (max-width:992px){
+         grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width:765px){
+        .my-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
      
       `}</style>
     </>

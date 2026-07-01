@@ -278,8 +278,7 @@ export default function Home() {
               <div className="about-us-content">
                 <h2>Why Monument Dealers Choose Stone Discover
                 </h2>
-                <p>There are many granite exporters in India. What sets Stone Discover apart is not just what we make but it's how we operate. We own our granite source, run our own factory, manage our own quality checks, and ship directly. That means when you place an order with us, you are dealing with the people who cut the stone anot a sales office that contracts it out.
-                </p>
+                <p>There are many granite exporters in India. What sets Stone Discover apart is not just what we make, but how we operate. We source our premium granite directly from the renowned quarries of Khammam, operate our own factory, manage our own quality checks, and ship directly. That means when you place an order with us, you are dealing with the people who process, finish, and export the stone—not a sales office that contracts the work out.</p>
                 <ul className="my-flex-item">
                   <li>
                     <div>

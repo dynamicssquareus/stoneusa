@@ -124,7 +124,7 @@ const Nav = () => {
               <li><a href="/tombstones-monuments/bench/">Memorial Bench</a></li>
               <li><a href="/tombstones-monuments/plaques/">Memorial Plaques</a></li>
               <li><a href="/tombstones-monuments/urns/">Memorial Urns</a></li>
-               <li><a href="/tombstones-monuments/">More +</a></li>
+               <li><a href="/tombstones-monuments/">View All</a></li>
             </ul>
           </li>
           <li className="dropdown"><a href="/headstones/"><span>Headstones</span> <i className="bi bi-chevron-down"></i></a>
@@ -135,7 +135,7 @@ const Nav = () => {
               <li><a href="/headstones/vases/">Headstone Vases</a></li>
               <li><a href="/headstones/slant/">Slant Marker</a></li>
               <li><a href="/headstones/bevel-markers/">Bevel Marker</a></li>
-              <li><a href="/headstones/">More +</a></li>
+              <li><a href="/headstones/">View All</a></li>
             </ul>
           </li>
           <li className="dropdown"><a href="#"><span>Resources</span> <i className="bi bi-chevron-down"></i></a>

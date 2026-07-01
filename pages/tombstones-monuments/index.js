@@ -450,7 +450,7 @@ const Index = ({ categories = [], categoryData = {} }) => {
                     <div className="row justify-content-center">
                         <div className="col-lg-10 text-center">
                             <div className="heading-center p-b-40">
-                                <h2 className="m-b-20"><span>Granite Tombstone Manufacturing Process</span>, From Selection to Global Supply!</h2>
+                                <h2 className="m-b-20"><span>Granite Memorial Manufacturing Process</span>, From Selection to Global Supply!</h2>
                                 <p>At Stone Discover, every granite tombstone begins with careful block selection followed by precision shaping and expert hand carving for accurate memorial designs.
                                     Each monument undergoes professional surface polishing and finishing to ensure durability, consistency, and premium appearance for international cemetery markets.
                                     Finally, all products are securely packed using export-grade protection to support safe global shipping and reliable B2B supply worldwide.</p>

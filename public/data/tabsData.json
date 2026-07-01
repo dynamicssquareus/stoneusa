@@ -48,7 +48,22 @@
           "img": "/img/webpages/Double-Headstone.png",
           "href": "/headstones/"
         }
+        ,{
+          "title": "Columbarium",
+          "img": "/img/webpages/pic-19.png",
+          "href": "/tombstones-monuments/columbarium/ "
+        }
+        ,{
+          "title": "Urns",
+          "img": "/img/webpages/pic-20.png",
+          "href": "/tombstones-monuments/urns/"
+        }
+        ,{
+          "title": "Columbarium",
+          "img": "/img/webpages/pic-22.png",
+          "href": "/tombstones-monuments/columbarium/"
+        }
       ]
     }
   ]
-}
+} 
