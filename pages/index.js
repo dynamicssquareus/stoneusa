@@ -4,6 +4,7 @@ import ModelBox from "@/components/ModelBox";
 import Image from "next/image";
 import HomeSlider from "@/components/HomeSlider";
 import VerticalTabs from "@/components/VerticalTabs";
+import HeroSlider from "@/components/HeroSlider";
 export default function Home() {
   return (
     <>
@@ -77,7 +78,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <section className="hero-banner-custom">
+      {/* <section className="hero-banner-custom">
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-12 text-center">
@@ -90,15 +91,16 @@ export default function Home() {
                     headerText="Scale Your Store!"
                     buttonText="Request a Quote"
                   />
-                  {/* <ModelBox className="btn-transparent" headerText="Scale Your Store!" buttonText="Request Catalogue" /> */}
+                  <ModelBox className="btn-transparent" headerText="Scale Your Store!" buttonText="Request Catalogue" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <HeroSlider />
 
-      <div className="container">
+      {/* <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="over-imgaa">
@@ -113,7 +115,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <section className="about-us-section about-us-section-hh p-b-40 p-t-60">
         <div className="container">
@@ -123,7 +125,7 @@ export default function Home() {
                 <h2>
                   Who We Are and Why It Matters to Your Business
                 </h2>
-                <p>Stone Discover has been a direct-manufacturer and wholesale exporter of premium granite monuments,  supplying memorial dealers, funeral homes, cemetery suppliers, and wholesale distributors across the USA, Canada, Australia, and Europe since 1984. We are not a trading company or a middleman. We own and operate our complete production chain, from granite sourcing at our quarry base in Khammam, Telangana, through manufacturing at our processing facility, to export-grade packaging and direct container shipment.</p>
+                <p>Stone Discover has been a direct-manufacturer and wholesale exporter of premium granite monuments,  supplying memorial dealers, funeral homes, cemetery suppliers, and wholesale distributors across the USA and  Canada since 1984. We are not a trading company or a middleman. We own and operate our complete production chain, from granite sourcing at our quarry base in Khammam, Telangana, through manufacturing at our processing facility, to export-grade packaging and direct container shipment.</p>
                 <p>Every headstone that leaves our facility has been through a documented quality process, block inspection at source, precision cutting and polishing, multi-point surface checks, and secure export packaging. With a consistent production capacity for bulk and container-load orders, we are built for long-term supply partnerships — not one-off transactions. If you are looking for a granite headstone supplier you can rely on month after month, that is exactly what we have been doing since 1984.</p>
                 <div className="d-flex-grd">
                   <div className="grif-list">
@@ -136,7 +138,7 @@ export default function Home() {
                   </div>
                   <div className="grif-list">
                     <span>10,000+</span>
-                    <p>Headstones Exported</p>
+                    <p>Container Shipment</p>
                   </div>
                 </div>
                 <a href="/about-us/" className="btn btn-four m-t-30">
@@ -148,8 +150,8 @@ export default function Home() {
             <div className="col-lg-6">
               <div className="about-us-image">
                 <Image
-                  src="/img/webpages/about-main.png"
-                  alt="About Us"
+                  src="/img/webpages/about-main-one.png"
+                  alt="stone discover unite"
                   className="img-fluid"
                   width={670}
                   height={589}
