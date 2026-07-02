@@ -12,6 +12,15 @@ const getImageUrl = (img) =>
 const getImageUrlBanner = (img) =>
   img ? `${process.env.NEXT_PUBLIC_IMAGE}/${img}` : '/img/webpages/product-01.jpg';
 
+const extractProducts = (data) => {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.value)) return data.value;
+  if (Array.isArray(data?.products)) return data.products;
+  if (Array.isArray(data?.data)) return data.data;
+  if (Array.isArray(data?.data?.products)) return data.data.products;
+  return [];
+};
+
 const LocationPage = ({ category, subcategory, products = [], faq, error, siblingsProducts = [] }) => {
   if (error) {
     return <p className="text-danger">{error}</p>;
@@ -75,6 +84,12 @@ const LocationPage = ({ category, subcategory, products = [], faq, error, siblin
 
 
   const displayHeroImage = primary.image || primary.featuredimage || '';
+  const displayProducts =
+    Array.isArray(products) && products.length > 0
+      ? products
+      : Array.isArray(siblingsProducts)
+        ? siblingsProducts
+        : [];
 
   // FAQs: prefer subcategory -> category -> passed faq prop -> []
   const displayFaqs =
@@ -137,15 +152,15 @@ const LocationPage = ({ category, subcategory, products = [], faq, error, siblin
             </div>
           </div>
 
-          {Array.isArray(siblingsProducts) && siblingsProducts.length > 0 ? (
-            siblingsProducts
+          {displayProducts.length > 0 ? (
+            displayProducts
               .slice()
               .sort((a, b) => (a.title || '').localeCompare(b.title || ''))
               .map((product) => (
                 <div className="col-lg-3 sliding-col-05" key={product._id || product.id || product.slug}>
                   <div className="card-06">
                     <div className="card-06-item">
-                      <a href={`/product/${product.slug}`}>
+                      <a href={`/product/${product.slug}/`}>
                         <Image
                           width={300}
                           height={200}
@@ -660,6 +675,18 @@ export const getStaticProps = async ({ params }) => {
       subcategory = data.subcategory || null;
       products = data.products || [];
       siblingsProducts = data.siblingsProducts || data.siblings || [];
+    }
+
+    const productsOriginBase =
+      process.env.NEXT_PUBLIC_PRODUCTS_ORIGIN_API_URL ||
+      'https://stonediscoverusaapi.onrender.com/api/frontend/productsorigin';
+    const productsOriginUrl = `${productsOriginBase.replace(/\/$/, '')}/${slug}`;
+    const productsOriginRes = await fetch(productsOriginUrl);
+
+    if (productsOriginRes.ok) {
+      products = extractProducts(await productsOriginRes.json());
+    } else {
+      console.error('Failed fetching location products:', productsOriginRes.status);
     }
 
     const faq = (subcategory && subcategory.faqs) || (category && category.faqs) || null;
