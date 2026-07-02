@@ -3,24 +3,46 @@ import Head from 'next/head';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap';
 import Image from 'next/image';
 import ModelBox from '@/components/ModelBox';
-import { useRouter } from 'next/router';
+import sanitizeHtml from 'sanitize-html';
 import FooterContactFormHome from '@/components/FooterContactFormHome';
 
+const getCategoriesArray = (categoriesRaw) => {
+  if (Array.isArray(categoriesRaw)) return categoriesRaw;
+  if (Array.isArray(categoriesRaw?.data)) return categoriesRaw.data;
+  if (Array.isArray(categoriesRaw?.results)) return categoriesRaw.results;
+  if (Array.isArray(categoriesRaw?.categories)) return categoriesRaw.categories;
+  if (Array.isArray(categoriesRaw?.value)) return categoriesRaw.value;
+  return [];
+};
+
+const sanitizeOptions = {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h2', 'h3', 'br', 'blockquote', 'table', 'thead', 'tbody', 'tr', 'th', 'td']),
+  allowedAttributes: {
+    a: ['href', 'name', 'target', 'rel'],
+    img: ['src', 'alt', 'width', 'height'],
+    '*': ['class', 'id', 'data-text'],
+  },
+  transformTags: {
+    'a': (tagName, attribs) => {
+      const at = { ...attribs };
+      if (at.target === '_blank') at.rel = at.rel ? `${at.rel} noopener noreferrer` : 'noopener noreferrer';
+      return { tagName: 'a', attribs: at };
+    }
+  }
+};
+
+const sanitizeRichText = (html = '') => sanitizeHtml(html || '', sanitizeOptions);
+
+const STATIC_CATEGORY_ROUTES = new Set(['granite', 'headstones', 'location', 'natural-stones']);
+
 const getImageUrl = (img) =>
-  img ? `${process.env.NEXT_PUBLIC_IMAGE}/${img}` : '/img/webpages/product-01.jpg';
+  img
+    ? img.startsWith('http')
+      ? img
+      : `${process.env.NEXT_PUBLIC_IMAGE?.replace(/\/$/, '')}/${img.replace(/^\//, '')}`
+    : '/img/webpages/product-01.jpg';
 
-const getImageUrlBanner = (img) =>
-  img ? `${process.env.NEXT_PUBLIC_IMAGE}/${img}` : '/img/webpages/product-01.jpg';
-
-const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
-  if (error) {
-    return <p className="text-danger">{error}</p>;
-  }
-  if (!category && !subcategory) {
-    return <p className="text-warning">Category not found.</p>;
-  }
-
-
+const CategoryPage = ({ category, subcategory, products = [], faq, error, categorySlug, subCategorySlug }) => {
   /*accordian code for description*/
   const [openDesc, setOpenDesc] = useState('');
   const toggleDesc = (id) => {
@@ -55,20 +77,22 @@ const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
     }
   };
 
-  const router = useRouter();
-  const { AllCategory_slug } = router.query;
+  if (error) {
+    return <p className="text-danger">{error}</p>;
+  }
+  if (!category && !subcategory) {
+    return <p className="text-warning">Category not found.</p>;
+  }
 
   // Prefer subcategory content if subcategory exists, otherwise fall back to category
   const primary = subcategory || category || {};
 
   const displayDescription =
-    (primary.description && primary.description.trim() && primary.description) || '';
+    (primary.description && primary.description.trim() && sanitizeRichText(primary.description)) || '';
 
 
-  const displayExtaDesc = (primary.extdescription && primary.extdescription) || '';
+  const displayExtaDesc = (primary.extdescription && sanitizeRichText(primary.extdescription)) || '';
   const displayShortDesc = (primary.shortdescription && primary.shortdescription) || '';
-
-  const displayHeroImage = primary.image || primary.featuredimage || '';
 
   // FAQs: prefer subcategory -> category -> passed faq prop -> []
   const displayFaqs =
@@ -80,11 +104,14 @@ const CategoryPage = ({ category, subcategory, products = [], faq, error }) => {
           ? faq
           : []);
 
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}headstones/${(primary.slug || category?.slug || '').replace(/^\//, '')}/`;
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.stonediscover.com/').replace(/\/$/, '') + '/';
+  const canonicalCategorySlug = (categorySlug || category?.slug || '').replace(/^\/|\/$/g, '');
+  const canonicalSubCategorySlug = (subCategorySlug || primary.slug || '').replace(/^\/|\/$/g, '');
+  const canonicalUrl = `${siteUrl}${canonicalCategorySlug}/${canonicalSubCategorySlug}/`;
   const CanImageUrl = (img) => {
     if (!img) return '';
     if (img.startsWith('http')) return img;
-    return `${process.env.NEXT_PUBLIC_IMAGE.replace(/\/$/, '')}/${img.replace(/^\//, '')}`;
+    return `${process.env.NEXT_PUBLIC_IMAGE?.replace(/\/$/, '')}/${img.replace(/^\//, '')}`;
   };
 
   return (
@@ -449,11 +476,18 @@ export const getStaticPaths = async () => {
 
     const data = await res.json();
 
-    const paths = Array.isArray(data)
-      ? data.map((cat) => ({
-        params: { AllCategory_slug: cat.slug },
-      }))
-      : [];
+    const paths = getCategoriesArray(data).flatMap((category) => {
+      if (!category?.slug || STATIC_CATEGORY_ROUTES.has(category.slug) || !Array.isArray(category.subcategories)) return [];
+
+      return category.subcategories
+        .filter((subcategory) => subcategory?.slug)
+        .map((subcategory) => ({
+          params: {
+            categorySlug: category.slug,
+            AllCategory_slug: subcategory.slug,
+          },
+        }));
+    });
 
     return {
       paths: paths || [],
@@ -470,11 +504,44 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   try {
+    const categorySlug = params?.categorySlug || '';
+    const subCategorySlug = params?.AllCategory_slug || '';
+
+    const categoriesUrl =
+      process.env.NEXT_PUBLIC_PRODUCT_CATEGORY_API_URL ||
+      'https://stonediscoverusaapi.onrender.com/api/frontend/categories/';
+
+    const categoriesRes = await fetch(categoriesUrl);
+    if (!categoriesRes.ok) {
+      throw new Error(`Failed fetching categories: ${categoriesRes.status}`);
+    }
+
+    const categoriesRaw = await categoriesRes.json();
+    const parentCategory = getCategoriesArray(categoriesRaw).find((category) => category?.slug === categorySlug);
+
+    if (!parentCategory) {
+      return {
+        notFound: true,
+        revalidate: 60,
+      };
+    }
+
+    const routeSubcategory = Array.isArray(parentCategory.subcategories)
+      ? parentCategory.subcategories.find((subcategory) => subcategory?.slug === subCategorySlug)
+      : null;
+
+    if (!routeSubcategory) {
+      return {
+        notFound: true,
+        revalidate: 60,
+      };
+    }
+
     const detailsBase =
       process.env.NEXT_PUBLIC_CATEGORY_CHILD_API_URL ||
       'https://stonediscoverusaapi.onrender.com/api/frontend/productscategory';
 
-    const slug = encodeURIComponent(params.AllCategory_slug || '');
+    const slug = encodeURIComponent(subCategorySlug);
     const url = `${detailsBase.replace(/\/$/, '')}/${slug}`;
 
     const res = await fetch(url);
@@ -498,25 +565,32 @@ export const getStaticProps = async ({ params }) => {
 
     // If API returned top-level "category" and "subcategory"
     if (data.category) {
-      category = data.category;
+      category = data.category || parentCategory;
       // some responses include subcategory at top-level or nested
-      subcategory = data.subcategory || data.category.subcategory || null;
+      subcategory = data.subcategory || data.category?.subcategory || routeSubcategory;
       products = data.products || [];
     } else if (data.slug && !data.category) {
       // data is the category object itself (maybe includes products and subcategory)
-      category = data;
+      category = parentCategory || data;
       subcategory = data.subcategory || null;
       products = data.products || [];
     } else if (data.subcategory) {
       // fallback: top-level subcategory with parent category provided in data.category or data.categoryId
       subcategory = data.subcategory;
-      category = data.category || null;
+      category = data.category || parentCategory;
       products = data.products || [];
     } else {
       // last fallback: data is something else, map fields defensively
-      category = data.category || data;
-      subcategory = data.subcategory || null;
+      category = data.category || parentCategory || data;
+      subcategory = data.subcategory || routeSubcategory;
       products = data.products || [];
+    }
+
+    if (subcategory?.slug && subcategory.slug !== subCategorySlug) {
+      return {
+        notFound: true,
+        revalidate: 60,
+      };
     }
 
     const faq = (subcategory && subcategory.faqs) || (category && category.faqs) || null;
@@ -527,6 +601,8 @@ export const getStaticProps = async ({ params }) => {
         subcategory,
         products,
         faq,
+        categorySlug,
+        subCategorySlug,
       },
       revalidate: 60,
     };

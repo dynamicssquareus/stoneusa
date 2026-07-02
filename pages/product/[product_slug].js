@@ -42,6 +42,27 @@ const ProductPage = ({ product, relatedProducts, specifications, error }) => {
 
   const canonicalUrl = `${siteUrl}${pagePath}`;
 
+  const formatBreadcrumbLabel = (value) =>
+    typeof value === 'string'
+      ? value
+          .replace(/-/g, ' ')
+          .replace(/\b\w/g, (char) => char.toUpperCase())
+      : '';
+
+  const rootCategorySlug = product?.category?.slug || 'tombstones-monuments';
+  const rootCategoryTitle =
+    product?.category?.title ||
+    formatBreadcrumbLabel(rootCategorySlug) ||
+    'Monuments';
+
+  const subcategorySlug =
+    product?.subcategory?.slug ||
+    (rootCategorySlug === 'tombstones-monuments' ? product?.categorySlug : undefined);
+  const subcategoryTitle =
+    product?.subcategory?.title ||
+    formatBreadcrumbLabel(subcategorySlug) ||
+    '';
+
   const metaTitle =
     product?.metaTitle ||
     product?.title ||
@@ -166,13 +187,16 @@ const ProductPage = ({ product, relatedProducts, specifications, error }) => {
           <div className='col-lg-12'>
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  {product?.subcategory ? (
-                    <a href={`/${product.category.slug}/${product.subcategory.slug}/`}>{product.subcategory.title}</a>
-                  ) : (
-                    <span>Uncategorized</span>
-                  )}
+                {/* <li className="breadcrumb-item">
+                  <a href={`/${rootCategorySlug}/`}>{rootCategoryTitle}</a>
                 </li>
+
+                {subcategorySlug ? (
+                  <li className="breadcrumb-item">
+                    <a href={`/${subcategorySlug}/`}>{subcategoryTitle}</a>
+                  </li>
+                ) : null} */}
+
                 <li className="breadcrumb-item active" aria-current="page">{product.Title || product.title}</li>
               </ol>
             </nav>

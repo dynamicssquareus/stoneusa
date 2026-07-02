@@ -5,40 +5,82 @@ import ModelBox from '@/components/ModelBox';
 import Image from 'next/image';
 import sanitizeHtml from 'sanitize-html';
 import FooterContactFormHome from '@/components/FooterContactFormHome';
-import FaqAccordionComon from '@/components/FaqAccordionComon';
 import CommonSlider from "@/components/CommonSlider";
 
-export const getStaticProps = async () => {
+const getCategoriesArray = (categoriesRaw) => {
+    if (Array.isArray(categoriesRaw)) return categoriesRaw;
+    if (Array.isArray(categoriesRaw?.data)) return categoriesRaw.data;
+    if (Array.isArray(categoriesRaw?.results)) return categoriesRaw.results;
+    if (Array.isArray(categoriesRaw?.categories)) return categoriesRaw.categories;
+    if (Array.isArray(categoriesRaw?.value)) return categoriesRaw.value;
+    return [];
+};
+
+const sanitizeOptions = {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h2', 'h3', 'br', 'blockquote', 'table', 'thead', 'tbody', 'tr', 'th', 'td']),
+    allowedAttributes: {
+        a: ['href', 'name', 'target', 'rel'],
+        img: ['src', 'alt', 'width', 'height'],
+        '*': ['class', 'id', 'data-text'],
+    },
+    transformTags: {
+        'a': (tagName, attribs) => {
+            const at = { ...attribs }
+            if (at.target === '_blank') at.rel = at.rel ? `${at.rel} noopener noreferrer` : 'noopener noreferrer'
+            return { tagName: 'a', attribs: at }
+        }
+    }
+};
+
+const sanitizeRichText = (html = '') => sanitizeHtml(html || '', sanitizeOptions);
+
+const STATIC_CATEGORY_ROUTES = new Set(['granite', 'headstones', 'location', 'natural-stones']);
+
+export const getStaticPaths = async () => {
     try {
+        const res = await fetch(process.env.NEXT_PUBLIC_PRODUCT_CATEGORY_API_URL)
+        if (!res.ok) {
+            return { paths: [], fallback: 'blocking' };
+        }
+
+        const categoriesRaw = await res.json()
+        const paths = getCategoriesArray(categoriesRaw)
+            .filter((category) => category?.slug && !STATIC_CATEGORY_ROUTES.has(category.slug))
+            .map((category) => ({
+                params: { categorySlug: category.slug },
+            }));
+
+        return {
+            paths,
+            fallback: 'blocking',
+        };
+    } catch (error) {
+        console.error('Error generating category paths:', error)
+        return { paths: [], fallback: 'blocking' };
+    }
+}
+
+export const getStaticProps = async ({ params }) => {
+    try {
+        const categorySlug = params?.categorySlug || '';
         const res = await fetch(process.env.NEXT_PUBLIC_PRODUCT_CATEGORY_API_URL)
         if (!res.ok) {
             throw new Error('Failed to fetch categories');
         }
         const categoriesRaw = await res.json()
 
-        // categoriesRaw is expected to be an array of category objects.
-        // Find the parent category with slug 'tombstones-monuments'
-        let parentCategory = null;
-        if (Array.isArray(categoriesRaw)) {
-            parentCategory = categoriesRaw.find(
-                (c) =>
-                    (typeof c.slug === 'string' && c.slug === 'headstones') ||
-                    (typeof c.title === 'string' && c.title.toLowerCase().includes('headstones'))
-            );
-        } else if (categoriesRaw && typeof categoriesRaw === 'object') {
-            // in case API returned an object with data/results
-            const arr = categoriesRaw.data || categoriesRaw.results || categoriesRaw.categories || null;
-            if (Array.isArray(arr)) {
-                parentCategory = arr.find(
-                    (c) =>
-                        (typeof c.slug === 'string' && c.slug === 'headstones') ||
-                        (typeof c.title === 'string' && c.title.toLowerCase().includes('headstones'))
-                );
+        const allCategories = getCategoriesArray(categoriesRaw);
+        const parentCategory = allCategories.find((c) => c?.slug === categorySlug);
+
+        if (!parentCategory) {
+            return {
+                notFound: true,
+                revalidate: 60,
             }
         }
 
         // Use subcategories of the parent. If parent not found, fallback to empty array.
-        const subcategories = (parentCategory && Array.isArray(parentCategory.subcategories)) ? parentCategory.subcategories : [];
+        const subcategories = Array.isArray(parentCategory.subcategories) ? parentCategory.subcategories : [];
 
         // ensure each subcategory has an `id` (so your existing code using category.id works)
         const categories = subcategories.map((sc) => ({
@@ -46,28 +88,22 @@ export const getStaticProps = async () => {
             id: sc.id || sc._id || sc._id?.toString?.() || sc.slug,
         }));
 
-        // Extract extdesc and description from parent and sanitize
-        const parentExtdescRaw = parentCategory?.extdesc || '';
-        const parentDescriptionRaw = parentCategory?.description || '';
+        let products = [];
+        if (categories.length === 0 && categorySlug) {
+            const detailsBase =
+                process.env.NEXT_PUBLIC_CATEGORY_CHILD_API_URL ||
+                'https://stonediscoverusaapi.onrender.com/api/frontend/productscategory';
+            const detailsRes = await fetch(`${detailsBase.replace(/\/$/, '')}/${encodeURIComponent(categorySlug)}`);
 
-        const sanitizeOptions = {
-            allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h2', 'h3', 'br', 'blockquote']),
-            allowedAttributes: {
-                a: ['href', 'name', 'target', 'rel'],
-                img: ['src', 'alt', 'width', 'height'],
-                '*': ['class', 'id'],
-            },
-            transformTags: {
-                'a': (tagName, attribs) => {
-                    const at = { ...attribs }
-                    if (at.target === '_blank') at.rel = at.rel ? `${at.rel} noopener noreferrer` : 'noopener noreferrer'
-                    return { tagName: 'a', attribs: at }
-                }
+            if (detailsRes.ok) {
+                const detailsData = await detailsRes.json();
+                products = Array.isArray(detailsData?.products) ? detailsData.products : [];
             }
         }
 
-        const extdesc = sanitizeHtml(parentExtdescRaw || '', sanitizeOptions)
-        const description = sanitizeHtml(parentDescriptionRaw || '', sanitizeOptions)
+        // Extract extdesc and description from parent and sanitize
+        const extdesc = sanitizeRichText(parentCategory?.extdesc)
+        const description = sanitizeRichText(parentCategory?.description)
 
         // Return categories (subcategories) plus full parent data (with sanitized html fields)
         const categoryData = {
@@ -79,28 +115,36 @@ export const getStaticProps = async () => {
         return {
             props: {
                 categories,
+                products,
                 categoryData,
                 error: null,
             },
-            // revalidate: 60,
-            revalidate: false,
+            revalidate: 60,
         }
     } catch (error) {
         console.error('Error fetching categories:', error)
         return {
             props: {
                 categories: [],
+                products: [],
                 categoryData: {},
                 error: 'Failed to load categories. Please try again later.',
             },
+            revalidate: 60,
         }
     }
 }
 
 const getImageUrl = (img) =>
-    img ? `${process.env.NEXT_PUBLIC_IMAGE}/${img}` : '/img/webpages/product-01.jpg'
+    img
+        ? img.startsWith('http')
+            ? img
+            : `${process.env.NEXT_PUBLIC_IMAGE?.replace(/\/$/, '')}/${img.replace(/^\//, '')}`
+        : '/img/webpages/product-01.jpg'
 
-const Index = ({ categories = [], categoryData = {} }) => {
+const getProductImage = (product) => product?.featuredimage || product?.images?.[0] || product?.image;
+
+const Index = ({ categories = [], products = [], categoryData = {} }) => {
 
     /*accordion code*/
     const [open, setOpen] = useState('1');
@@ -132,7 +176,7 @@ const Index = ({ categories = [], categoryData = {} }) => {
 
     // --- dynamic head/meta values (fallbacks included) ---
     const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || '').replace(/\/$/, '') + '/';
-    const pagePath = 'headstones/';
+    const pagePath = `${(categoryData?.slug || '').replace(/^\/|\/$/g, '')}/`;
     const canonicalUrl = siteUrl ? `${siteUrl}${pagePath}` : `https://www.stonediscover.com/${pagePath}`;
 
     const metaTitle =
@@ -211,8 +255,8 @@ const Index = ({ categories = [], categoryData = {} }) => {
                     <div className="row">
                         <div className="col-lg-6 align-self-end">
                             <div className="hero-banner-two-head-cust">
-                                <h1>{categoryData?.title ? categoryData.title + ' ' : 'Tombstones '}<span></span></h1>
-                                <p>{categoryData?.shortdescription || 'The USA Trusted Partner for Quality Tombstones Stones'}</p>
+                                <h1>{categoryData?.title ? categoryData.title + ' ' : 'Category '}<span></span></h1>
+                                <p>{categoryData?.shortdescription || 'The USA Trusted Partner for Quality Stone Products'}</p>
                             </div>
                         </div>
                     </div>
@@ -224,7 +268,7 @@ const Index = ({ categories = [], categoryData = {} }) => {
                     <div className='row'>
                         <div className='col-lg-12'>
                             <div className='heading-left p-b-20'>
-                                <h2 className='m-b-30'>Our Categories</h2>
+                                <h2 className='m-b-30'>{categories.length > 0 ? 'Our Categories' : 'Our Products'}</h2>
                             </div>
                         </div>
                     </div>
@@ -234,7 +278,7 @@ const Index = ({ categories = [], categoryData = {} }) => {
                                 <div className="col-lg-3 sliding-col-05" key={category.id}>
                                     <div className="card-06">
                                         <div className="card-06-item">
-                                            <a href={`/headstones/${category.slug}/`}>
+                                            <a href={`/${categoryData.slug}/${category.slug}/`}>
                                                 <Image
                                                     src={getImageUrl(category.image)}
                                                     alt={category.title}
@@ -248,8 +292,27 @@ const Index = ({ categories = [], categoryData = {} }) => {
                                     </div>
                                 </div>
                             ))
+                        ) : products.length > 0 ? (
+                            products.slice().sort((a, b) => (a.title || '').localeCompare(b.title || '')).map((product) => (
+                                <div className="col-lg-3 sliding-col-05" key={product._id || product.id || product.slug}>
+                                    <div className="card-06">
+                                        <div className="card-06-item">
+                                            <a href={`/product/${product.slug}/`}>
+                                                <Image
+                                                    src={getImageUrl(getProductImage(product))}
+                                                    alt={product.title}
+                                                    className="img-fluid"
+                                                    width={300}
+                                                    height={300}
+                                                />
+                                                <span>{product.title}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
                         ) : (
-                            <p>No categories available.</p>
+                            <p>No categories or products available.</p>
                         )}
                     </div>
                 </div>
@@ -450,7 +513,7 @@ const Index = ({ categories = [], categoryData = {} }) => {
                     <div className="row justify-content-center">
                         <div className="col-lg-10 text-center">
                             <div className="heading-center p-b-40">
-                                <h2 className="m-b-20"><span>Granite Headstone Manufacturing Process</span>, From Selection to Global Supply!</h2>
+                                <h2 className="m-b-20"><span>Granite Memorial Manufacturing Process</span>, From Selection to Global Supply!</h2>
                                 <p>At Stone Discover, every granite tombstone begins with careful block selection followed by precision shaping and expert hand carving for accurate memorial designs.
                                     Each monument undergoes professional surface polishing and finishing to ensure durability, consistency, and premium appearance for international cemetery markets.
                                     Finally, all products are securely packed using export-grade protection to support safe global shipping and reliable B2B supply worldwide.</p>
