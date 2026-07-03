@@ -76,11 +76,6 @@
     },
 
     {
-      "source": "/granite/",
-      "destination": "/natural-stones/granite/",
-      "statusCode": 301
-    },
-    {
       "source": "/marble/",
       "destination": "/natural-stones/marble/",
       "statusCode": 301
@@ -1076,6 +1071,231 @@
   "source": "/product/:name(.*quartz.*)",
   "destination": "/tombstones-monuments/",
   "statusCode": 301
-}
+},
+{
+    "source": "/product/antartica-1260-satvario/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/arceli-tan/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/armonia-grey/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/black-beauty/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/blue-rust/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/breacia-natural-crema/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/brecia-aurora/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/calacata-gold/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/carnica/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/cemento-brown/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/chianti-oynx/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/ciera-ivory/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/denver-choco/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/dorian/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/dream-night/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/emera-onyx/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/ethos-lvory/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/fantasy-bianco/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/florence/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/gemstone/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/grigio-armani-natural/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/hamburrg-grey/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/ice-green/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/infinito-azul/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/lapis-azul/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/macon-dgy/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/madisson-grey/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/madrid-marfil/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/merceli/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/nordic-caffe/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/oregano-gresv/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/oro-bianco/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/portoro-nero-gold/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/regis-dgy/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/rockland-choco/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/rosalina/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/rosso-venato-red/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/roverato-caffe/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/silk-satvario/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/slate-nero/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/smoke-carara/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/sonic-silver/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/statuario-classic/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/stm6002/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  },
+  {
+    "source": "/product/zer-stone/",
+    "destination": "/tombstones-monuments/",
+    "statusCode": 301
+  }
   ]
 }
