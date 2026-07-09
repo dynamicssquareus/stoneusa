@@ -187,15 +187,15 @@ const ProductPage = ({ product, relatedProducts, specifications, error }) => {
           <div className='col-lg-12'>
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
-                {/* <li className="breadcrumb-item">
+                <li className="breadcrumb-item">
                   <a href={`/${rootCategorySlug}/`}>{rootCategoryTitle}</a>
                 </li>
 
                 {subcategorySlug ? (
                   <li className="breadcrumb-item">
-                    <a href={`/${subcategorySlug}/`}>{subcategoryTitle}</a>
+                    <a href={`/${rootCategorySlug}/${subcategorySlug}/`}>{subcategoryTitle}</a>
                   </li>
-                ) : null} */}
+                ) : null} 
 
                 <li className="breadcrumb-item active" aria-current="page">{product.Title || product.title}</li>
               </ol>
