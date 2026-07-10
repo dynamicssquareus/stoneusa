@@ -115,25 +115,45 @@ export default function AuthorPage({ author, posts = [] }) {
         {/* Author Header */}
         <div className="row pd-90">
           <div className="col-md-2">
-            <div className="auther-inner">
-              <Image
-                src={
-                  author.profilePic
-                    ? getProfileImageUrl(author.profilePic)
-                    : "/img/icons/user-avt.png"
-                }
-                width={100}
-                height={100}
-                alt={author.name}
-                className="img-fluid rounded-circle"
-              />
-            </div>
-          </div>
+  <div className="auther-inner text-center">
+    <Image
+      src={
+        author.profilePic
+          ? getProfileImageUrl(author.profilePic)
+          : "/img/icons/user-avt.png"
+      }
+      width={100}
+      height={100}
+      alt={author.name}
+      className="img-fluid rounded-circle"
+    />
+
+    {author.linkedin && (
+  <div className="mt-3">
+    <a
+      href={author.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="author-linkedin-icon"
+      aria-label="LinkedIn Profile"
+    >
+      <i className="bi bi-linkedin"></i>
+    </a>
+  </div>
+)}
+  </div>
+</div>
 
           <div className="col-md-10">
             <div className="common-titles">
+              {author.designation && (
+      <div className="author-designation">
+        {author.designation}
+      </div>
+    )}
+           
               <h1>{author.name}</h1>
-              <p>{author.aboutus}</p>
+                 <p>{author.aboutus}</p>
             </div>
           </div>
         </div>
