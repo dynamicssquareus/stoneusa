@@ -125,8 +125,8 @@ export default function Home() {
                 <h2>
                   Who We Are and Why It Matters to Your Business
                 </h2>
-                <p>Stone Discover has been a direct-manufacturer and wholesale exporter of premium granite monuments,  supplying memorial dealers, funeral homes, cemetery suppliers, and wholesale distributors across the USA and  Canada since 1984. We are not a trading company or a middleman. We own and operate our complete production chain, from granite sourcing at our quarry base in Khammam, Telangana, through manufacturing at our processing facility, to export-grade packaging and direct container shipment.</p>
-                <p>Every headstone that leaves our facility has been through a documented quality process, block inspection at source, precision cutting and polishing, multi-point surface checks, and secure export packaging. With a consistent production capacity for bulk and container-load orders, we are built for long-term supply partnerships — not one-off transactions. If you are looking for a granite headstone supplier you can rely on month after month, that is exactly what we have been doing since 1984.</p>
+                <p>Stone Discover has been a direct-manufacturer and wholesale exporter of premium granite monuments,  supplying memorial dealers, funeral homes, cemetery suppliers, and wholesale distributors across the USA and  Canada since 1984. We are not a trading company or a middleman. We own and operate our complete production chain, from granite sourcing at  quarry base in Khammam, Telangana, through manufacturing at our processing facility, to export-grade packaging and direct container shipment.</p>
+                <p>Every <a href="/tombstones-monuments/">Cemetery memorial</a> headstones that leaves our facility has been through a documented quality process, block inspection at source, precision cutting and polishing, multi-point surface checks, and secure export packaging. With a consistent production capacity for bulk and container-load orders, we are built for long-term supply partnerships — not one-off transactions. If you are looking for a granite headstone supplier you can rely on month after month, that is exactly what we have been doing since 1984.</p>
                 <div className="d-flex-grd">
                   <div className="grif-list">
                     <span>40+</span>
@@ -337,7 +337,7 @@ export default function Home() {
                 <h2 className="m-b-30">
                   Timeless <span>Craftsmanship Across</span> Borders
                 </h2>
-                <p>Stone Discover ships granite headstones direct to the USA and Canada on a regular container schedule, with established logistics to key ports including Los Angeles, Houston, New York, and Vancouver. All shipments come with full export documentation, fumigated wooden crate packaging, and damage-free delivery commitment. We also supply to Australia, the United Kingdom, Germany, France, Ireland, and New Zealand, making us a single-source granite supplier for distributors operating across multiple markets.
+                <p>Stone Discover ships <a href="/headstones/">granite headstones</a> direct to the USA and Canada on a regular container schedule, with established logistics to key ports including Los Angeles, Houston, New York, and Vancouver. All shipments come with full export documentation, fumigated wooden crate packaging, and damage-free delivery commitment. We also supply to Australia, the United Kingdom, Germany, France, Ireland, and New Zealand, making us a single-source granite supplier for distributors operating across multiple markets.
                 </p>
               </div>
             </div>

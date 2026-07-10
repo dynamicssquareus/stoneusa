@@ -33,7 +33,7 @@ const FaqAccordion = ({ faqList = [] }) => {
     },
     {
       title: "What different varieties of Headstones do you offer?",
-      description: "Our full product range includes upright headstones (standard and bevel), angel headstones, flat grave markers, book headstones, kerb sets, headstone vases, memorial benches, and columbarium units. All products are available in multiple granite colors and can be supplied plain (blank) or with custom engraving. We can also produce bespoke designs — custom shapes, sculpted figures, religious motifs, and non-standard sizes — on request, with minimum order quantities depending on the design complexity.",
+      description: "Our full product range includes upright headstones (standard and bevel), angel headstones, flat grave markers, book headstones, kerb sets, headstone vases, memorial benches, and columbarium units. All products are available in multiple <a href=\"/variety-of-granites/\">granite colors</a> and can be supplied plain (blank) or with custom engraving. We can also produce bespoke designs — custom shapes, sculpted figures, religious motifs, and non-standard sizes — on request, with minimum order quantities depending on the design complexity.",
     },
     {
       title: "Can you supply granite blank headstones for local engraving?",
