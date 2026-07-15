@@ -21,6 +21,15 @@ const extractProducts = (data) => {
   return [];
 };
 
+const getCategoriesArray = (data) => {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.value)) return data.value;
+  if (Array.isArray(data?.categories)) return data.categories;
+  if (Array.isArray(data?.results)) return data.results;
+  if (Array.isArray(data?.data)) return data.data;
+  return [];
+};
+
 const LocationPage = ({ category, subcategory, products = [], faq, error, siblingsProducts = [] }) => {
   if (error) {
     return <p className="text-danger">{error}</p>;
@@ -602,10 +611,13 @@ export const getStaticPaths = async () => {
 
     const data = await res.json();
 
-    const paths = Array.isArray(data)
-      ? data.map((cat) => ({
-        params: { Location_slug: cat.slug },
-      }))
+    const locationCategory = getCategoriesArray(data).find((cat) => cat?.slug === 'location');
+    const paths = Array.isArray(locationCategory?.subcategories)
+      ? locationCategory.subcategories
+        .filter((location) => location?.slug)
+        .map((location) => ({
+          params: { Location_slug: location.slug },
+        }))
       : [];
 
     return {
@@ -623,11 +635,35 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   try {
+    const locationSlug = params.Location_slug || '';
+
+    const categoriesUrl =
+      process.env.NEXT_PUBLIC_PRODUCT_CATEGORY_API_URL ||
+      'https://stonediscoverusaapi.onrender.com/api/frontend/categories/';
+
+    const categoriesRes = await fetch(categoriesUrl);
+    if (!categoriesRes.ok) {
+      throw new Error(`Failed fetching categories: ${categoriesRes.status}`);
+    }
+
+    const categoriesData = await categoriesRes.json();
+    const locationCategory = getCategoriesArray(categoriesData).find((cat) => cat?.slug === 'location');
+    const routeLocation = Array.isArray(locationCategory?.subcategories)
+      ? locationCategory.subcategories.find((location) => location?.slug === locationSlug)
+      : null;
+
+    if (!routeLocation) {
+      return {
+        notFound: true,
+        revalidate: 60,
+      };
+    }
+
     const detailsBase =
       process.env.NEXT_PUBLIC_CATEGORY_CHILD_API_URL ||
       'https://stonediscoverusaapi.onrender.com/api/frontend/productscategory';
 
-    const slug = encodeURIComponent(params.Location_slug || '');
+    const slug = encodeURIComponent(locationSlug);
     const url = `${detailsBase.replace(/\/$/, '')}/${slug}`;
 
     const res = await fetch(url);
@@ -654,13 +690,13 @@ export const getStaticProps = async ({ params }) => {
     if (data.category) {
       category = data.category;
       // some responses include subcategory at top-level or nested
-      subcategory = data.subcategory || data.category.subcategory || null;
+      subcategory = data.subcategory || data.category.subcategory || routeLocation;
       products = data.products || [];
       siblingsProducts = data.siblingsProducts || data.siblings || [];
     } else if (data.slug && !data.category) {
       // data is the category object itself (maybe includes products and subcategory)
       category = data;
-      subcategory = data.subcategory || null;
+      subcategory = data.subcategory || routeLocation;
       products = data.products || [];
       siblingsProducts = data.siblingsProducts || data.siblings || [];
     } else if (data.subcategory) {
@@ -672,7 +708,7 @@ export const getStaticProps = async ({ params }) => {
     } else {
       // last fallback: data is something else, map fields defensively
       category = data.category || data;
-      subcategory = data.subcategory || null;
+      subcategory = data.subcategory || routeLocation;
       products = data.products || [];
       siblingsProducts = data.siblingsProducts || data.siblings || [];
     }

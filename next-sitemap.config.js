@@ -1,5 +1,22 @@
 const path = require('path');
 
+const STATIC_CATEGORY_ROUTES = new Set(['granite', 'headstones']);
+const EXCLUDED_CATEGORY_SLUGS = new Set(['information', 'natural-stones']);
+
+const getCategoriesArray = (categoriesRaw) => {
+  if (Array.isArray(categoriesRaw)) return categoriesRaw;
+  if (Array.isArray(categoriesRaw?.data)) return categoriesRaw.data;
+  if (Array.isArray(categoriesRaw?.results)) return categoriesRaw.results;
+  if (Array.isArray(categoriesRaw?.categories)) return categoriesRaw.categories;
+  if (Array.isArray(categoriesRaw?.value)) return categoriesRaw.value;
+  return [];
+};
+
+const addUrl = (urls, url) => {
+  if (!url) return;
+  urls.add(url.endsWith('/') ? url : `${url}/`);
+};
+
 module.exports = {
   siteUrl: 'https://www.stonediscover.com',
   generateRobotsTxt: false,
@@ -25,42 +42,36 @@ module.exports = {
     '/blog/general-contractor-vs-construction-company'
   ],
 
-
   additionalPaths: async (config) => {
     const res = await fetch(
       'https://stonediscoverusaapi.onrender.com/api/frontend/categories/'
     );
-    const categories = await res.json();
+    const categories = getCategoriesArray(await res.json());
 
-    const urls = [];
+    const urls = new Set();
 
     for (const cat of categories) {
-      // 🚫 SKIP natural-stones COMPLETELY
-      const excludedSlugs = ['information'];
+      if (!cat?.slug || EXCLUDED_CATEGORY_SLUGS.has(cat.slug)) continue;
 
-      if (excludedSlugs.includes(cat.slug)) continue;
+      if (STATIC_CATEGORY_ROUTES.has(cat.slug)) {
+        addUrl(urls, `/${cat.slug}/`);
+      }
 
-      // ✅ category page
-      urls.push(`/${cat.slug}/`);
-
-      // ✅ subcategories
       if (Array.isArray(cat.subcategories)) {
         for (const sub of cat.subcategories) {
-          if (cat.slug === 'location') {
-            // location → city pages
-            urls.push(`/location/${sub.slug}/`);
-          } else {
-            // normal category inner pages
-            urls.push(`/${cat.slug}/${sub.slug}/`);
+          if (!sub?.slug) continue;
+
+          if (STATIC_CATEGORY_ROUTES.has(cat.slug)) {
+            addUrl(urls, `/${cat.slug}/${sub.slug}/`);
           }
         }
       }
     }
 
-    // optional static pages
     const staticUrls = [
       // '/catalog-download/',
       // '/contact-us/',
+     '/location/' 
     ];
 
     const allUrls = [...new Set([...urls, ...staticUrls])];
