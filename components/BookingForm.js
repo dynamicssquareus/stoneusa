@@ -201,10 +201,13 @@ const BookingForm = ({ onSubmit, productData = null }) => {
       )}
 
       {productData.size && (
-        <p className="mb-1">
-          <b>Size:</b> {productData.size}
-        </p>
-      )}
+  <p className="mb-1">
+    <b>Size:</b>{" "}
+    {productData.size.includes("H/S:")
+      ? productData.size
+      : `Size: ${productData.size}`}
+  </p>
+)}
 
       {productData.discount &&
         productData.discount !== "NA" && (

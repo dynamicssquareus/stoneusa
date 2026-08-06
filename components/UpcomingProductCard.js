@@ -17,9 +17,19 @@ export default function UpcomingProductCard({ product, onBook }) {
 
                 <h6>{product.title}</h6>
 
-                <p className="mut">
+                {/* <p className="mut">
                     H/S: {product.hsSize} | Base: {product.baseSize}
-                </p>
+                </p> */}
+
+                <p className="mut">
+  {product.size ? (
+    <>Size: {product.size}</>
+  ) : (
+    <>
+      H/S: {product.hsSize} | Base: {product.baseSize}
+    </>
+  )}
+</p>
 
                 {/* <p>{product.description}</p> */}
                 {/* {product.options.map((option, index) => (
@@ -36,13 +46,12 @@ export default function UpcomingProductCard({ product, onBook }) {
                     className="btn btnii"
                     onClick={() =>
                         onBook({
-                            title: product.title,
-                            //   option: product.options?.[0]?.label || "Coming Soon",
-                            //   price: product.options?.[0]?.price || "TBA",
-                            size: `H/S: ${product.hsSize} | Base: ${product.baseSize}`,
-                            //   discount: product.options?.[0]?.discount || "NA",
-                            yard: product.yard || "Coming Soon",
-                        })
+  title: product.title,
+  size: product.size
+  ? product.size
+  : `H/S: ${product.hsSize} | Base: ${product.baseSize}`,
+  yard: product.yard || "Coming Soon",
+})
                     }
                 >
                     Prebook Now

@@ -99,8 +99,7 @@
     "id": 7,
     "title": "flat marker rock pitched",
     "image": "/img/webpages/up-07.png",
-    "hsSize": "24 x 20 x 4",
-     "baseSize": "x",
+    "size": "24 x 20 x 4",
     "description": "Premium black granite memorial available soon.",
     "options": [
       {
@@ -115,8 +114,7 @@
     "id": 8,
     "title": "flat marker edges sawn ",
     "image": "/img/webpages/up-08.png",
-    "hsSize": "24 x 12 x 4",
-      "baseSize": "x",
+    "size": "24 x 12 x 4",
     "description": "Premium black granite memorial available soon.",
     "options": [
       {
@@ -131,8 +129,7 @@
     "id": 9,
     "title": "Companion flat marker",
     "image": "/img/webpages/up-07.png",
-    "hsSize": "48 x 12 x 4",
-      "baseSize": "x",
+    "size": "48 x 12 x 4",
     "description": "Premium black granite memorial available soon.",
     "options": [
       {
