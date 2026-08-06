@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Companion sertop rock pitched",
-     "image": "/img/webpages/up-01.png",
+    "image": "/img/webpages/up-01.png",
     "hsSize": "48 x 6 x 24",
     "baseSize": "60 x 6 x 12",
     "description": "Premium black granite memorial available soon.",
@@ -13,7 +13,7 @@
         "discount": ""
       }
     ],
-     "yard": "Liverpool"
+    "yard": "Liverpool"
   },
   {
     "id": 2,
@@ -29,12 +29,12 @@
         "discount": ""
       }
     ],
-     "yard": "Liverpool"
+    "yard": "Liverpool"
   },
-   {
+  {
     "id": 3,
     "title": "Sertop single",
-     "image": "/img/webpages/up-03.png",
+    "image": "/img/webpages/up-03.png",
     "hsSize": "30 x 20 x 6",
     "baseSize": "36 x 12 x 6",
     "description": "Premium black granite memorial available soon.",
@@ -45,12 +45,12 @@
         "discount": ""
       }
     ],
-     "yard": "Liverpool"
+    "yard": "Liverpool"
   },
   {
     "id": 4,
     "title": "Sertop single  rock pitched",
-     "image": "/img/webpages/up-04.png",
+    "image": "/img/webpages/up-04.png",
     "hsSize": "30 x 20 x 6",
     "baseSize": "36 x 12 x 6",
     "description": "Premium black granite memorial available soon.",
@@ -61,12 +61,12 @@
         "discount": ""
       }
     ],
-     "yard": "Liverpool"
+    "yard": "Liverpool"
   },
   {
     "id": 5,
     "title": "Small sertop",
-     "image": "/img/webpages/up-05.png",
+    "image": "/img/webpages/up-05.png",
     "hsSize": "24 x 20 x 6",
     "baseSize": "30 x 12 x 6",
     "description": "Premium black granite memorial available soon.",
@@ -77,12 +77,12 @@
         "discount": ""
       }
     ],
-     "yard": "Liverpool"
+    "yard": "Liverpool"
   },
-   {
+  {
     "id": 6,
     "title": "Small sertop single",
-     "image": "/img/webpages/up-06.png",
+    "image": "/img/webpages/up-06.png",
     "hsSize": "24 x 20 x 6",
     "baseSize": "30 x 12 x 6",
     "description": "Premium black granite memorial available soon.",
@@ -93,6 +93,6 @@
         "discount": ""
       }
     ],
-     "yard": "Liverpool"
+    "yard": "Liverpool"
   }
 ]
