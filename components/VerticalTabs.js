@@ -60,7 +60,7 @@ export default function VerticalTabs() {
                   </div>
                 ))}
                 {activeContent.length === 0 && (
-                  <div className="p-3 text-muted">No items for this tab.</div>
+                  <div className="p-3 text-muted">Headstones</div>
                 )}
               </div>
             </TabPane>
