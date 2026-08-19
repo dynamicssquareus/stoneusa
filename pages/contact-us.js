@@ -84,7 +84,7 @@ const ContactUs = () => {
                                         </div>
                                         <div className='inf-wigt'>
                                             <h4>Customer Support & Sales(India):</h4>
-                                            <p><a href="tel:919667584700">+91 966 758 4700</a></p>
+                                            <p><a href="tel:+919667584700">+91 966 758 4700</a></p>
                                         </div>
                                     </div>
                                     <div className='add-list'>
@@ -93,7 +93,7 @@ const ContactUs = () => {
                                         </div>
                                         <div className='inf-wigt'>
                                             <h4>Customer Support & Sales(USA):</h4>
-                                            <p><a href="tel:18582935368">+1 858 293 5368</a></p>
+                                            <p><a href="tel:+18582935368">+1 858 293 5368</a></p>
                                         </div>
                                     </div>
                                     <div className='add-list'>

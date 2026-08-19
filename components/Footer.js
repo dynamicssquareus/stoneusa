@@ -4,6 +4,7 @@ import FooterContactForm from './FooterContactForm';
 import FormSubscribe from './FormSubscribe';
 import ScrollToTopButton from './ScrollToTopButton';
 import Image from 'next/image';
+import FloatingContact from './FloatingContact';
 Image
 
 const Footer = ({ faq }) => {
@@ -103,8 +104,8 @@ const Footer = ({ faq }) => {
                                 <h4>Useful info</h4>
                                 <p><b>Office:</b> 1116, JMD Megapolis, Sector 48, Gurugram, Haryana 122018.</p>
                                 <p><b>Factory:</b> SY.No.33, Alinagar, Chetlapotham Village, Jinaram-Mandal, Sangareddy, Telangana 502319.</p>
-                                <p><b>Customer Support & Sales(India):</b> <a href="tel:919667584700">+91 966 758 4700</a></p>
-                                <p><b>Customer Support & Sales(USA):</b> <a href="tel:18582935368">+1 858 293 5368</a></p>
+                                <p><b>Customer Support & Sales(India):</b> <a href="tel:+919667584700">+91 966 758 4700</a></p>
+                                <p><b>Customer Support & Sales(USA):</b> <a href="tel:+18582935368">+1 858 293 5368</a></p>
                                 <p><b>Email:</b> <a href="mailto:info@stonediscover.com">info@stonediscover.com</a></p>
                                 <p><b>Working Time:</b> Mon-Sat: 8 AM - 5 PM</p>
                                 {/* <FormSubscribe /> */}
@@ -121,6 +122,7 @@ const Footer = ({ faq }) => {
                 </div>
             </footer>
             <ScrollToTopButton />
+            <FloatingContact />
         </>
     );
 }
