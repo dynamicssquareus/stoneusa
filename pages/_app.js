@@ -27,7 +27,7 @@ function MyAppWithLayout({ Component, pageProps }) {
       {/* ========================= */}
       {/* ✅ GLOBAL SCHEMA */}
       {/* ========================= */}
-      <Head>
+      {/* <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -186,7 +186,7 @@ function MyAppWithLayout({ Component, pageProps }) {
             ),
           }}
         />
-      </Head>
+      </Head> */}
       <Layout faq={pageProps.faq}>
         <Component {...pageProps} />
       </Layout>
