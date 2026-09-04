@@ -275,8 +275,242 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <section>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-9">
+              <div className="heading-center p-b-40">
+                <h2 className="m-b-30">  
+                  Our Granite <span>Monument</span> Product Range
+                </h2>
+                <p>Explore our range of granite monuments, including headstones, kerb sets, memorial benches, plaques, vases and columbariums, crafted for quality, durability and lasting memorials.
+ </p>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-12">
+              <VerticalTabs />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="content-section-two p-b-80 p-t-100 m-p-03">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 align-items-center">
+              <div className="left-card-01-img">
+                <Image
+                  src="/img/webpages/headstones-side-pic.png"
+                  alt="headstones"
+                  className="img-fluid"
+                  width={555}
+                  height={546}
+                />
+              </div>
+            </div>
+            <div className="col-lg-6 align-self-center">
+              <div className="about-us-content">
+                <h2>Why Monument Dealers Choose Stone Discover</h2>
+                <p>
+                  There are many granite exporters in India. What sets Stone
+                  Discover apart is not just what we make, but how we operate.
+                  We source our premium granite directly from the renowned
+                  quarries of Khammam, operate our own factory, manage our own
+                  quality checks, and ship directly. That means when you place
+                  an order with us, you are dealing with the people who process,
+                  finish, and export the stone—not a sales office that contracts
+                  the work out.
+                </p>
+                <ul className="my-flex-item">
+                  <li>
+                    <div>
+                      <i className="bi bi-check-lg"></i>{" "}
+                      <span>Fast Production & Turnaround Times</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <i className="bi bi-check-lg"></i>{" "}
+                      <span>Quality Checks Before Shipment</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <i className="bi bi-check-lg"></i>{" "}
+                      <span>Manufacturer-direct pricing advantage</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <i className="bi bi-check-lg"></i>{" "}
+                      <span>Exclusive focus on granite memorial products</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <i className="bi bi-check-lg"></i>{" "}
+                      <span>Bulk order and container supply capability</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <i className="bi bi-check-lg"></i>{" "}
+                      <span>Dedicated B2B account support</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <i className="bi bi-check-lg"></i>{" "}
+                      <span>Proven export experience since 1984</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="products-section-one m-p-02">
+         <section className="p-b-80 p-t-60">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-9">
+              <div className="heading-center p-b-40">
+                <h2 className="m-b-30">
+                  Custom Engraving & <span>Blank Headstone Supply</span>
+                </h2>
+                <p>
+                  All granite headstones in our range are available with custom
+                  engraving completed at our facility in India, or as polished
+                  blank Headstone ready for local engraving by your team. Common
+                  engraving options include sandblast engraving, laser
+                  engraving, and hand-painted lettering. Custom religious
+                  symbols, portraits, and bespoke border designs are available
+                  on request. Minimum quantities apply for custom engraving
+                  options — contact our team for details.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="grid">
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-289.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-290.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-291.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-292.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-293.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-294.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-295.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+                <figure className="card-001">
+                  <Image
+                    loading="lazy"
+                    src="/img/webpages/Granite-Headstones-296.png"
+                    alt="granite engraved headstone"
+                    width={329}
+                    height={288}
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section className="new-bg">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-9">
+              <div className="heading-center p-b-40">
+                <h2 className="m-b-30">
+                  Ready to Source Granite Monuments{" "}
+                  <span> Direct from the Manufacturer</span>?
+                </h2>
+                <p>
+                  Whether you are placing your first container order or looking
+                  to switch from your current granite supplier, our export team
+                  is ready to help. Share your requirements with us, including
+                  product types, volumes, target market, and delivery port, and
+                  we will provide pricing, lead times, and a sample catalogue
+                  within 24 hours. Most trade enquiries receive a response
+                  within one business day.{" "}
+                </p>
+              </div>
+              <div className="button-center-new text-center">
+                <a href="/get-quote-now/" className="btn btn-three">
+                  Request a Trade Quote
+                </a>
+                <a href="/catalog-download/" className="btn btn-four">
+                  Download Trade Catalogue
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     
+       <section className="products-section-one m-p-02">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10 text-center">
@@ -401,165 +635,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="content-section-two p-b-80 p-t-100 m-p-03">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 align-items-center">
-              <div className="left-card-01-img">
-                <Image
-                  src="/img/webpages/headstones-side-pic.png"
-                  alt="headstones"
-                  className="img-fluid"
-                  width={555}
-                  height={546}
-                />
-              </div>
-            </div>
-            <div className="col-lg-6 align-self-center">
-              <div className="about-us-content">
-                <h2>Why Monument Dealers Choose Stone Discover</h2>
-                <p>
-                  There are many granite exporters in India. What sets Stone
-                  Discover apart is not just what we make, but how we operate.
-                  We source our premium granite directly from the renowned
-                  quarries of Khammam, operate our own factory, manage our own
-                  quality checks, and ship directly. That means when you place
-                  an order with us, you are dealing with the people who process,
-                  finish, and export the stone—not a sales office that contracts
-                  the work out.
-                </p>
-                <ul className="my-flex-item">
-                  <li>
-                    <div>
-                      <i className="bi bi-check-lg"></i>{" "}
-                      <span>Fast Production & Turnaround Times</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <i className="bi bi-check-lg"></i>{" "}
-                      <span>Quality Checks Before Shipment</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <i className="bi bi-check-lg"></i>{" "}
-                      <span>Manufacturer-direct pricing advantage</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <i className="bi bi-check-lg"></i>{" "}
-                      <span>Exclusive focus on granite memorial products</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <i className="bi bi-check-lg"></i>{" "}
-                      <span>Bulk order and container supply capability</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <i className="bi bi-check-lg"></i>{" "}
-                      <span>Dedicated B2B account support</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <i className="bi bi-check-lg"></i>{" "}
-                      <span>Proven export experience since 1984</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
+       <section className="p-t-80">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-9">
               <div className="heading-center p-b-40">
                 <h2 className="m-b-30">
-                  Timeless <span>Craftsmanship Across</span> Borders
+                  Recent <span>Export</span>
                 </h2>
-                <p>
-                  Stone Discover ships{" "}
-                  <a href="/headstones/">granite headstones</a> direct to the
-                  USA and Canada on a regular container schedule, with
-                  established logistics to key ports including Los Angeles,
-                  Houston, New York, and Vancouver. All shipments come with full
-                  export documentation, fumigated wooden crate packaging, and
-                  damage-free delivery commitment. We also supply to Australia,
-                  the United Kingdom, Germany, France, Ireland, and New Zealand,
-                  making us a single-source granite supplier for distributors
-                  operating across multiple markets.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <VerticalTabs />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="new-bg">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-9">
-              <div className="heading-center p-b-40">
-                <h2 className="m-b-30">
-                  Ready to Source Granite Monuments{" "}
-                  <span> Direct from the Manufacturer</span>?
-                </h2>
-                <p>
-                  Whether you are placing your first container order or looking
-                  to switch from your current granite supplier, our export team
-                  is ready to help. Share your requirements with us, including
-                  product types, volumes, target market, and delivery port, and
-                  we will provide pricing, lead times, and a sample catalogue
-                  within 24 hours. Most trade enquiries receive a response
-                  within one business day.{" "}
-                </p>
-              </div>
-              <div className="button-center-new text-center">
-                <a href="/get-quote-now/" className="btn btn-three">
-                  Request a Trade Quote
-                </a>
-                <a href="/catalog-download/" className="btn btn-four">
-                  Download Trade Catalogue
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="p-b-80 p-t-60">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-9">
-              <div className="heading-center p-b-40">
-                <h2 className="m-b-30">
-                  Custom Engraving & <span>Blank Headstone Supply</span>
-                </h2>
-                <p>
-                  All granite headstones in our range are available with custom
-                  engraving completed at our facility in India, or as polished
-                  blank Headstone ready for local engraving by your team. Common
-                  engraving options include sandblast engraving, laser
-                  engraving, and hand-painted lettering. Custom religious
-                  symbols, portraits, and bespoke border designs are available
-                  on request. Minimum quantities apply for custom engraving
-                  options — contact our team for details.
-                </p>
               </div>
             </div>
           </div>
@@ -567,75 +650,59 @@ export default function Home() {
             <div className="col-lg-12">
               <div className="grid">
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-289.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/Granite-Headstones-305.png"
+                    alt="Polished headstones batch"
                   />
                 </figure>
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-290.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/p-2.jpg"
+                    alt="Cross monument on base"
                   />
                 </figure>
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-291.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/p-3.jpg"
+                    alt="Black granite memorials"
                   />
                 </figure>
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-292.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/p-4.jpg"
+                    alt="Granite tomb covers"
                   />
                 </figure>
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-293.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/p-5.jpg"
+                    alt="Shield shaped memorial wrapped"
                   />
                 </figure>
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-294.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/Granite-Headstones-306.png"
+                    alt="Pallets wrapped for shipping"
                   />
                 </figure>
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-295.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/p-7.png"
+                    alt="Crated slabs ready to export"
                   />
                 </figure>
                 <figure className="card-001">
-                  <Image
+                  <img
                     loading="lazy"
-                    src="/img/webpages/Granite-Headstones-296.png"
-                    alt="granite engraved headstone"
-                    width={329}
-                    height={288}
+                    src="/img/webpages/p-8.png"
+                    alt="Cartons prepared for dispatch"
                   />
                 </figure>
               </div>
@@ -717,81 +784,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-9">
-              <div className="heading-center p-b-40">
-                <h2 className="m-b-30">
-                  Recent <span>Export</span>
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="grid">
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/Granite-Headstones-305.png"
-                    alt="Polished headstones batch"
-                  />
-                </figure>
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/p-2.jpg"
-                    alt="Cross monument on base"
-                  />
-                </figure>
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/p-3.jpg"
-                    alt="Black granite memorials"
-                  />
-                </figure>
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/p-4.jpg"
-                    alt="Granite tomb covers"
-                  />
-                </figure>
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/p-5.jpg"
-                    alt="Shield shaped memorial wrapped"
-                  />
-                </figure>
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/Granite-Headstones-306.png"
-                    alt="Pallets wrapped for shipping"
-                  />
-                </figure>
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/p-7.png"
-                    alt="Crated slabs ready to export"
-                  />
-                </figure>
-                <figure className="card-001">
-                  <img
-                    loading="lazy"
-                    src="/img/webpages/p-8.png"
-                    alt="Cartons prepared for dispatch"
-                  />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </>
   );
 }
