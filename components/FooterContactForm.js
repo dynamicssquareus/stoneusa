@@ -17,7 +17,9 @@ const FooterContactForm = ({faq}) => {
     router.asPath.startsWith('/headstones') ||
     router.asPath.startsWith('/location') ||
      router.asPath.startsWith('/product') ||
-  router.asPath.startsWith('/natural-stones');
+  router.asPath.startsWith('/natural-stones') ||
+  router.asPath.startsWith('/granite') ||
+  router.pathname === '/[categoryslug]';
 
     // Check for exact match pages OR tombstone category pages
   const shouldHide =

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'reactstrap';
 import ModelBox from '@/components/ModelBox';
 import Image from 'next/image';
@@ -145,6 +146,16 @@ const getImageUrl = (img) =>
 const getProductImage = (product) => product?.featuredimage || product?.images?.[0] || product?.image;
 
 const Index = ({ categories = [], products = [], categoryData = {} }) => {
+    const router = useRouter();
+    const currentPath = (router.asPath || '').toLowerCase();
+    const cleanPath = currentPath.split('?')[0].split('#')[0].replace(/\/+$/, '');
+    const isGranite =
+        categoryData?.slug?.toLowerCase() === 'granite' ||
+        cleanPath === '/granite' ||
+        currentPath.startsWith('/granite/') ||
+        currentPath.startsWith('/granite?') ||
+        currentPath.startsWith('/granite#') ||
+        currentPath.includes('/granite');
 
     /*accordion code*/
     const [open, setOpen] = useState('1');
@@ -509,6 +520,7 @@ const Index = ({ categories = [], products = [], categoryData = {} }) => {
 
 
             <section className="products-section-one m-p-02">
+                {!isGranite && (
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-10 text-center">
@@ -528,7 +540,8 @@ const Index = ({ categories = [], products = [], categoryData = {} }) => {
                         </div>
                     </div>
                 </div>
-                <div className="container  p-t-80">
+                )}
+                <div className={`container ${isGranite ? '' : 'p-t-80'}`}>
                     <div className="row justify-content-center">
                         <div className="col-lg-9">
                             <div className="heading-center p-b-40">

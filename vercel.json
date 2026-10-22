@@ -1386,6 +1386,117 @@
       "source": "/location/brooklyn/",
       "destination": "/location/new-york/",
       "statusCode": 301
-    }
+    },
+    {
+    "source": "/blog/bronze-grave-marker-maintenance/",
+    "destination": "/blog/bronze-vs-granite-headstones-stocking-guide/",
+    "statusCode": 301
+    },
+    {
+    "source": "/blog/indian-supplier-and-chinese-supplier/",
+    "destination": "/blog/indian-granite-over-chinese-granite/",
+    "statusCode": 301
+    },
+    {
+    "source": "/blog/headstone-shapes/",
+    "destination": "/blog/exploring-tombstone-shapes-styles/",
+    "statusCode": 301
+    },
+    {
+    "source": "/blog/difference-between-headstones-monuments-markers-urns/",
+    "destination": "/blog/tombstone-vs-headstone-vs-gravestone/",
+    "statusCode": 301
+    },
+   {
+    "source": "/blog/memorialize-a-graves-memorial-benches/",
+    "destination": "/blog/buying-a-memorial-bench/",
+    "statusCode": 301
+   },
+   {
+    "source": "/blog/bench-memorial-tributes/",
+    "destination": "/blog/buying-a-memorial-bench/",
+    "statusCode": 301
+    },
+    {
+    "source": "/blog/pet-memorials-pay-tribute/",
+    "destination": "/blog/indian-granite-pet-memorials/",
+    "statusCode": 301
+    },
+    {
+    "source": "/blog/all-about-cremation-urns-for-ashes/",
+    "destination": "/blog/granite-urns-for-ashes-wholesale-usa/",
+    "statusCode": 301
+    },
+   {
+    "source": "/blog/columbarium-all-you-need-to-know/",
+    "destination": "/blog/columbarium-units-for-memorial-parks/",
+    "statusCode": 301
+    },
+    {
+    "source": "/blog/flat-grave-marker-a-price-breakdown/",
+    "destination": "/blog/flat-grave-markers-guide/",
+    "statusCode": 301
+    },
+    {
+    "source": "/blog/indian-granite-varieties/",
+    "destination": "/granite/",
+    "statusCode": 301
+    },
+  {
+    "source": "/blog/granite-grades-buyers-need-to-know/",
+    "destination": "/granite/",
+    "statusCode": 301
+  },
+  {
+    "source": "/blog/husband-and-wife-headstones-guide/",
+    "destination": "/blog/headstone-designs-to-honor-couples/",
+    "statusCode": 301
+  },
+  {
+    "source": "/blog/marble-and-granite-headstones/",
+    "destination": "/blog/materials-for-memorial-headstones/",
+    "statusCode": 301
+  },
+  {
+    "source": "/blog/significance-of-granite-tombstone/",
+    "destination": "/blog/materials-for-memorial-headstones/",
+    "statusCode": 301
+  },
+  {
+    "source": "/blog/penny-on-headstone/",
+    "destination": "/blog/stones-on-graves/",
+    "statusCode": 301
+  },
+  {
+    "source": "/blog/a-perfect-headstone/",
+    "destination": "/blog/headstone-design-guide-usa/",
+    "statusCode": 301
+  },
+  
+  {
+    "source": "/blog/profit-granite-monuments-from-india/",
+    "destination": "/blog/save-money-direct-import-granite-headstones-india/",
+    "statusCode": 301
+  },
+  {
+    "source": "/blog/are-you-overpaying-for-headstones/",
+    "destination": "/blog/how-much-should-a-headstones-cost/",
+    "statusCode": 301
+  },
+  {
+    "source": "/bevel-grave-marker/",
+    "destination": "/headstones/bevel-markers/",
+    "statusCode": 301
+  },
+  {
+  "source": "/location/lubbock/",
+  "destination": "/location/houston/",
+  "statusCode": 301
+  },
+  {
+  "source": "/variety-of-granites/",
+  "destination": "/granite/",
+  "statusCode": 301
+  }
   ]
 }

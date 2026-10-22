@@ -141,7 +141,7 @@ const Nav = () => {
           <li className="dropdown"><a href="#"><span>Resources</span> <i className="bi bi-chevron-down"></i></a>
             <ul>
               <li><a className="nav-link" href="/blog/">Blogs</a></li>
-              <li><a className="nav-link" href="/variety-of-granites/">Granite varieties</a></li>
+              <li><a className="nav-link" href="/granite/">Granite varieties</a></li>
                <li><a className="nav-link" href="/photo-gallery/">Photo Gallery</a></li>
             </ul>
           </li>
