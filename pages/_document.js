@@ -33,6 +33,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://ww
             }}
           />
 
+          {/* Google Analytics */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-QDK7CSTSWN"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-QDK7CSTSWN');
+              `,
+            }}
+          />
+
           {/* Hotjar Tracking Code */}
           <script
             dangerouslySetInnerHTML={{
