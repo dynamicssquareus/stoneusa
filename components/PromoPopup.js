@@ -7,7 +7,7 @@ const PromoPopup = () => {
   const [isMinimized, setIsMinimized] = useState(false);
   const router = useRouter();
 
-  const bannerSrc = encodeURI('/img/banner/Honoring_Our_Heroes_ Memorial_Stone_Offers.webp');
+  const bannerSrc = encodeURI('/img/banner/Thanksgiving Black-Friday-Stone-Offers.webp');
   const targetLink = '/get-quote-now/';
 
   useEffect(() => {
